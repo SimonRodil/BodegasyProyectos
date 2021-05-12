@@ -1,0 +1,121 @@
+.tim-typo {
+  padding-left: 25%;
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.tim-typo .tim-note {
+  bottom: 5px;
+  color: #c0c1c2;
+  display: block;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  left: 0;
+  margin-left: 20px;
+  position: absolute;
+  width: 260px;
+}
+
+/* offline-doc */
+
+.offline-doc .navbar.navbar-transparent {
+  padding-top: 25px;
+  border-bottom: none;
+}
+
+.offline-doc .navbar.navbar-transparent .navbar-minimize {
+  display: none;
+}
+
+.offline-doc .navbar.navbar-transparent .navbar-brand,
+.offline-doc .navbar.navbar-transparent .collapse .navbar-nav .nav-link {
+  color: #FFFFFF !important;
+}
+
+.offline-doc .footer {
+  z-index: 3 !important;
+}
+
+.offline-doc .page-header .container {
+  z-index: 3;
+}
+
+.offline-doc .page-header:after {
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#map {
+  z-index: 2;
+  height: calc(100vh - 70px);
+  margin-top: 70px;
+}
+
+input.form-control:read-only {
+    background: #eaeaea;
+}
+
+/* SIMON STYLE */
+.bootstrap-select .dropdown-item.active, 
+.bootstrap-select .dropdown-item:active {
+  color: white;
+}
+.bootstrap-select .dropdown-menu > li > a:hover,
+.bootstrap-select .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  background-color: #e5e5e5;
+  color: #434343;
+  box-shadow: none;
+}
+.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
+  top: 10px !important;
+}
+
+@keyframes spin-animation {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  display: block;
+  transform-origin: center center;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: spin-animation 2s linear infinite;
+  animation: spin-animation 2s linear infinite;
+}
+
+.note-editor .btn.btn-light {
+  background: #eaeaea;
+  padding: 10px 15px;
+  color: #222222;
+  box-shadow: none;
+}
+.note-editor .btn.btn-light:hover {
+  box-shadow: none;
+}
+
+.note-editor .note-toolbar-wrapper .note-toolbar {
+  padding-bottom: 0 !important;
+  border-bottom: 1px solid #eaeaea;
+  text-align: center
+}
+
+.datepicker-container {
+  z-index: 2000 !important;
+}
+
+.sidebar .logo {
+	padding-left: 10px;
+	padding-right: 10px;
+}
