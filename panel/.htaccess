@@ -1,7 +1,7 @@
 Options +FollowSymLinks
 
 RewriteEngine on
-RewriteBase /bodegas/panel/
+RewriteBase /bodegasyproyectos/panel/
 
 RewriteRule ^/$ index.php [L]
 
