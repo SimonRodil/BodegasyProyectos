@@ -424,7 +424,7 @@ $(function () {
         size: '56px',
         showPopup: true,
         showOnIE: false,
-        headerTitle: 'Bodegas y Espacios',
+        headerTitle: $('title').text(),
         headerColor: 'rgb(9, 94, 84)',
         backgroundColor: 'crimson',
         position: 'right',

@@ -110,7 +110,7 @@ $blog = $query_blog->fetch_array();
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-10">
             <h1 class="mb-2"><?= $blog['title'] ?></h1>
-            <div><a href="./index.php">Inicio</a> <span class="mx-2 text-white">&bullet;</span> <a href="./blog.php">Blog</a> <span class="mx-2 text-white">&bullet;</span> <strong class="text-white"><?= $blog['title'] ?></strong></div>
+            <div><a href="./index.php" class="orange-color">Inicio</a> <span class="mx-2 text-white">&bullet;</span> <a href="./blog.php">Blog</a> <span class="mx-2 text-white">&bullet;</span> <strong class="text-white"><?= $blog['title'] ?></strong></div>
           </div>
         </div>
       </div>
