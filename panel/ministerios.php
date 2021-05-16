@@ -314,8 +314,8 @@ $query_lideres = $con_ministerios->SelLideres(); ?>
   <script src="../assets/paneldatatable/datatables.min.js"></script>
   <!-- Main Scripts! -->
   <script src="../assets/panel/js/main.js"></script>
-  <script src="../assets/panellibs/datepicker.min.js"></script>
-  <script src="../assets/panellibs/datepicker.es-ES.min.js"></script>
+  <script src="../assets/panel/libs/datepicker.min.js"></script>
+  <script src="../assets/panel/libs/datepicker.es-ES.min.js"></script>
   <!-- Form, Modal, Scripts -->
   <script src="../assets/panel/js/ministerios/script.js"></script>
 </body>

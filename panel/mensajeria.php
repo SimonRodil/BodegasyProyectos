@@ -245,8 +245,8 @@ require ('../mod/config.php');
   <script src="../assets/panel/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Main Scripts! -->
   <script src="../assets/panel/js/main.js"></script>
-  <script src="../assets/panellibs/datepicker.min.js"></script>
-  <script src="../assets/panellibs/datepicker.es-ES.min.js"></script>
+  <script src="../assets/panel/libs/datepicker.min.js"></script>
+  <script src="../assets/panel/libs/datepicker.es-ES.min.js"></script>
   <!-- Datatable! -->
   <script src="../assets/paneldatatable/datatables.min.js"></script>
   <!-- Form, Modal, Scripts -->
