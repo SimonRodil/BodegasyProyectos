@@ -6,7 +6,7 @@ require ('../../mod/users.php');
 $con_users = new Users();
 $user = $con_users->SelUser($_POST['id'])->fetch_array();
 
-$tmp_files_folder = "../../images/profile_pictures/tmp/";
+$tmp_files_folder = "../../assets/images/profile_pictures/tmp/";
 
 // Elimino todo lo que está en la carpeta temporal.
 $files = glob($tmp_files_folder. '*'); // get all file names
@@ -16,7 +16,7 @@ foreach($files as $file){ // iterate files
 }
 
 // requires php5
-define('UPLOAD_DIR', '../../images/profile_pictures/');
+define('UPLOAD_DIR', '../../assets/images/profile_pictures/');
 $img = $_POST['image'];
 $img = str_replace('data:image/png;base64,', '', $img);
 $img = str_replace(' ', '+', $img);

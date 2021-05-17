@@ -20,17 +20,19 @@ require ('../../mod/blog.php');
 $con_blog = new Blogs();
 
 if(isset($_FILES['image']['name'])):
-  $tmp_files_folder = "../../images/blog/";
-  $img_name = uniqid() . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-  $dir = $tmp_files_folder . $img_name;
-  $upload = move_uploaded_file($_FILES['image']['tmp_name'], $dir);
-  if($upload == true):
-    $image = $img_name;
-    http_response_code(200);
-  else:
-    echo 'No se puedo subir la imagen, intente neuvamente.';
-    http_response_code(500);
-  endif;
+  try {
+    $tmp_files_folder = "../../assets/images/blog/";
+    $img_name = uniqid() . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+    $dir = $tmp_files_folder . $img_name;
+    $upload = move_uploaded_file($_FILES['image']['tmp_name'], $dir);
+    if($upload == true):
+      $image = $img_name;
+      http_response_code(200);
+    else:
+      echo 'No se puedo subir la imagen, intente neuvamente.';
+      http_response_code(500);
+    endif;
+  } catch (Exception $e) { return true; }
 else: 
   $image = null;
 endif;

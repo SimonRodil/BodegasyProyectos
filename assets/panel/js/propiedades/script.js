@@ -401,7 +401,7 @@ $('.editar-galeria').click(function(){
     data: { id: data.id },
     success: function(resp) {
       $.each(resp, function(index, value){
-        $('#galeria-propiedad #fotos-cargadas').append('<div class="box"><img src="../images/propiedades/fotos/' + value.imagen + '"><div class="close" data-id="' + value.id + '"></div></div>');
+        $('#galeria-propiedad #fotos-cargadas').append('<div class="box"><img src="../assets/images/propiedades/fotos/' + value.imagen + '"><div class="close" data-id="' + value.id + '"></div></div>');
       });
     },
     complete: function() { deleteImage(); }
@@ -425,7 +425,7 @@ $('.ver-galeria').click(function(){
     data: { id: data.id },
     success: function(resp) {
       $.each(resp, function(index, value){
-        $('#galeria-propiedad #fotos-cargadas').append('<div class="box"><img src="../images/propiedades/fotos/' + value.imagen + '"><div class="close" data-id="' + value.id + '"></div></div>');
+        $('#galeria-propiedad #fotos-cargadas').append('<div class="box"><img src="../assets/images/propiedades/fotos/' + value.imagen + '"><div class="close" data-id="' + value.id + '"></div></div>');
       });
     },
     complete: function() { deleteImage(); }

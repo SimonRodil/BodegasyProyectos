@@ -2,11 +2,11 @@ function AsignarFotoDestacada(id, tf) {
   // Muestro la imagen destacada.
   if(data.imagen_destacada != null) {
 	  
-	  $('#imagen-destacada-img').attr('src', '../images/propiedades/' + data.imagen_destacada).show();
+	  $('#imagen-destacada-img').attr('src', '../assets/images/propiedades/' + data.imagen_destacada).show();
 	  
   } else {
 	  
-	  $('#imagen-destacada-img').attr('src', '../images/propiedades/default.png').show();
+	  $('#imagen-destacada-img').attr('src', '../assets/images/propiedades/default.png').show();
 	  
   }
 	
@@ -43,7 +43,7 @@ function AsignarFotoDestacada(id, tf) {
         $('#select-foto-destacada').fadeOut();
         $('#lets-croppie').fadeIn();
         basic.croppie('bind', {
-          url: '../images/propiedades/tmp/' + data
+          url: '../assets/images/propiedades/tmp/' + data
         }).then(function(){
           $('.save-croppie').attr('disabled', false).addClass('btn-info').removeClass('btn-disabled');
           $('#select-foto-destacada .loader').slideUp();

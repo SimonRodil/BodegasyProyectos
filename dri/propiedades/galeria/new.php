@@ -11,7 +11,7 @@ if(!isset($_POST['propiedad']) || empty($_POST['propiedad'])) { http_response_co
 
 $propiedad = $con_propiedades->SelPropiedad($_POST['propiedad'])->fetch_array();
 
-$folder = "../../../images/propiedades/fotos/";
+$folder = "../../../assets/images/propiedades/fotos/";
 $info_file = pathinfo($_FILES['image']['name']);
 $img_name = uniqid() . '.' . $info_file['extension'];
 $dir = $folder . $img_name;

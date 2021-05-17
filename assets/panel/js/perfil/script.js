@@ -29,7 +29,7 @@ $('#input-select-image').change(function(){
       $('#select-image').fadeOut();
       $('#lets-croppie').fadeIn();
       basic.croppie('bind', {
-        url: '../images/profile_pictures/tmp/' + data
+        url: '../assets/images/profile_pictures/tmp/' + data
       });
       $('.save-croppie').attr('disabled', false).addClass('btn-info').removeClass('btn-disabled');
       

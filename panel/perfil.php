@@ -200,7 +200,7 @@ if($user['rank'] == 1) {
               <div class="card card-profile">
                 <div class="card-avatar">
                   <a href="javascript:;" class="change-pic">
-                    <img class="img" src="../images/profile_pictures/<?= ($user['profile_pic'] != '') ? $user['profile_pic'] : 'default.jpg' ?>" id="new-croppie" />
+                    <img class="img" src="../assets/images/profile_pictures/<?= ($user['profile_pic'] != '') ? $user['profile_pic'] : 'default.jpg' ?>" id="new-croppie" />
                   </a>
                 </div>
                 <div class="card-body">
