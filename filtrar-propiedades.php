@@ -390,7 +390,7 @@ $paginas = ceil($query_propiedades_number->num_rows / 6);
   <script src="assets/js/jquery.countdown.min.js"></script>
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script src="assets/js/bootstrap-datepicker.min.js"></script>
-  <script src="assets/libs/sweetalert2.js"></script>
+  <script src="assets/libs/sweetalert2.all.min.js"></script>
   <script src="assets/js/aos.js"></script>
   <script type="text/javascript" src="assets/libs/floating-wpp.js"></script>
   <script src="assets/js/main.js"></script>

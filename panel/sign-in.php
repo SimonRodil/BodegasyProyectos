@@ -79,7 +79,7 @@ if(isset($_SESSION['sert_cpanel']['id']) && !empty($_SESSION['sert_cpanel']['id'
   <script src="../assets/panel/libs/materialize.min.js"></script>
   <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script> -->
   <!--  Plugin for Sweet Alert -->
-  <script src="../assets/panel/js/plugins/sweetalert2.js"></script>
+  <script src="../assets/panel/js/plugins/sweetalert2.all.min.js"></script>
   <script>
     $(document).ready(function(){
       
@@ -101,7 +101,7 @@ if(isset($_SESSION['sert_cpanel']['id']) && !empty($_SESSION['sert_cpanel']['id'
               url: "../dri/sign-in.php",
               beforeSend: function() { $btn.html('<span class="material-icons spin">sync</span>').attr('disabled', true); },
               complete: function() { $btn.html($btnOT).attr('disabled', false); },
-              success: function() { let timerInterval
+              success: function() { 
                 Swal.fire({
                   title: 'Enhorabuena!',
                   icon: 'success',
@@ -114,11 +114,11 @@ if(isset($_SESSION['sert_cpanel']['id']) && !empty($_SESSION['sert_cpanel']['id'
                 });
               },
               error: function(data) { 
-                Swal.fire(
-                  'Error!',
-                  'No se ha podido iniciar sesión correctamente...',
-                  'error'
-                );
+                Swal.fire({
+                  title: 'Error!',
+                  text: 'No se ha podido iniciar sesión correctamente...',
+                  icon: 'error'
+                });
               }
             });
 

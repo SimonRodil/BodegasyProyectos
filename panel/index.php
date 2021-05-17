@@ -252,7 +252,7 @@ $query_mensajes = $con_mensajeria->SelMensajesPorAsesor($_SESSION['sert_cpanel']
   <!-- Plugin for the momentJs  -->
   <script src="../assets/panel/js/plugins/moment.min.js"></script>
   <!--  Plugin for Sweet Alert -->
-  <script src="../assets/panel/js/plugins/sweetalert2.js"></script>
+  <script src="../assets/panel/js/plugins/sweetalert2.all.min.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/panel/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Main Scripts! -->

@@ -695,7 +695,7 @@ endif;
   <!-- Plugin for the momentJs  -->
   <script src="../assets/panel/js/plugins/moment.min.js"></script>
   <!--  Plugin for Sweet Alert -->
-  <script src="../assets/panel/js/plugins/sweetalert2.js"></script>
+  <script src="../assets/panel/js/plugins/sweetalert2.all.min.js"></script>
   <!-- Forms Validations Plugin -->
   <script src="../assets/panel/js/plugins/jquery.validate.min.js"></script>
   <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
