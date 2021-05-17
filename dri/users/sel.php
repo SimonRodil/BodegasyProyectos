@@ -1,6 +1,5 @@
 <?php 
 
-
 header('Content-Type: application/json'); 
 
 # Inicio sesión.

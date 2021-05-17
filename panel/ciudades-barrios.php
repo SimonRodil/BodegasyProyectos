@@ -35,14 +35,14 @@ require ('../mod/config.php'); ?>
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/panel/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="../" class="simple-text logo-normal">
-          <img src="../images/logo.png" class="img-fluid" height="50">
+          <img src="../assets/images/logo.png" class="img-fluid" height="50">
         </a></div>
       <div class="sidebar-wrapper">
         <?php require ('structure/menu.php'); ?>
@@ -354,7 +354,7 @@ require ('../mod/config.php'); ?>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/panel/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Datatable! -->
-  <script src="../assets/paneldatatable/datatables.min.js"></script>
+  <script src="../assets/panel/datatable/datatables.min.js"></script>
   <!-- Main Scripts! -->
   <script src="../assets/panel/js/main.js"></script>
   <!-- Form, Modal, Scripts -->

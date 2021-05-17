@@ -44,7 +44,7 @@ if(isset($_SESSION['sert_cpanel']['id']) && !empty($_SESSION['sert_cpanel']['id'
         <center>
          <div class="container">
             <div  class="z-depth-3 y-depth-3 x-depth-3 grey green-text lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px; margin-top: 100px; solid #EEE; min-width: 320px">
-              <div class="section"><img src="../images/logo.png" width="240"></div>
+              <div class="section"><img src="../assets/images/logo.png" width="240"></div>
               <!-- <div class="section"></div> -->
               <form>
                 <div class="section"><i class="mdi-alert-error red-text"></i></div>

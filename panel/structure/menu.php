@@ -18,12 +18,12 @@
               <p>Asesores</p>
             </a>
           </li>
-          <!-- <li class="nav-item ">
+          <li class="nav-item ">
             <a class="nav-link" href="./ciudades-barrios.php">
               <i class="material-icons">tour</i>
               <p>Ciudades, Barrios</p>
             </a>
-          </li> -->
+          </li>
           <li class="nav-item ">
             <a class="nav-link" href="./blog.php">
               <i class="material-icons">book</i>
