@@ -125,7 +125,7 @@ $query_propiedades_relativas = $con_propiedades->SelDiferentesPropiedades($propi
   </div>
 
 
-    <div class="site-blocks-cover overlay sb-small" style="background-image: url(assets/images/home-bg.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover overlay sb-small" style="background-image: url(assets/images/home-bg.JPG);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-10">
