@@ -177,10 +177,10 @@ endif;
                         <th>
                           Precio
                         </th>
-                        <th class="to-hide">
+                        <th>
                           Ciudad
                         </th>
-                        <th class="to-hide">
+                        <th>
                           Barrio
                         </th>
                         <th class="to-hide">

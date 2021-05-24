@@ -418,7 +418,7 @@ $('.asesores a').each(function(){
 
 $(function () {
     $('.wpp-plugin').floatingWhatsApp({
-        phone: '573014674251',
+        phone: '57301 532 83 00',
         popupMessage: 'Saludos 👋' + '<br><br>' + 'En que podemos ayudarte?',
         message: "",
         size: '56px',

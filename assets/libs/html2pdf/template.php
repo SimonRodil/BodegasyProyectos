@@ -17,7 +17,7 @@ td    { vertical-align: top; }
 				<td style="width: 60%; text-align: right; font-weight: bold; font-size: 12px">
 				  <h4 style="color: #1d1a3e; padding: 0"><?= $system['title'] ?></h4>
 				  Contáctanos<br>
-				  (+57) 3014674251<br>
+				  (+57) 301 532 83 00<br>
 				  comercial@bodegasyproyectos.com
 				</td>
 			</tr>

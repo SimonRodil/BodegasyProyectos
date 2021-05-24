@@ -149,7 +149,7 @@
               <h3 class="h6 text-black mb-3 text-uppercase">Información de Contacto</h3>
               <p>¡En caso de que necesites un contacto directo e inmediato! Puedes usar las siguientes plataformas:</p>
               <p class="mb-0 font-weight-bold">Teléfono</p>
-              <p class="mb-4"><a href="tel:00573014674251">(+57) 3014674251</a></p>
+              <p class="mb-4"><a href="tel:0057301 532 83 00">(+57) 301 532 83 00</a></p>
 
               <p class="mb-0 font-weight-bold">Correo Electrónico</p>
               <p class="mb-4"><a href="mailto:comercial@bodegasyproyectos.com">comercial@bodegasyproyectos.com</a></p>
@@ -219,7 +219,7 @@ Medellín - Colombia.</p>
                 <a href="https://instagram.com/bodegasyespacios" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1200"><span class="icon-instagram"></span></a>
                 <a href="#" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1300"><span class="icon-linkedin"></span></a><br><br>
 				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1350">Teléfono</p>
-				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1350"><a href="tel:00573014674251">(+57) 301 532 83 00</a></p>
+				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1350"><a href="tel:0057301 532 83 00">(+57) 301 532 83 00</a></p>
 
 				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1400">Correo Electrónico</p>
 				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1450"><a href="mailto:comercial@bodegasyproyectos.com">comercial@bodegasyproyectos.com</a></p>
