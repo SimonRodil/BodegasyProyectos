@@ -1,11 +1,3 @@
-<style type="text/css">
-<!--
-table { vertical-align: top; }
-tr    { vertical-align: top; }
-td    { vertical-align: top; }
-}
--->
-</style>
 <page backcolor="#FEFEFE" backtop="0" backbottom="30mm" footer="date;heure;page" style="font-size: 12pt">
     <div style="max-width: 100%;">
 		<bookmark title="Lettre" level="0" ></bookmark>
@@ -43,7 +35,7 @@ td    { vertical-align: top; }
 		  </table>
 		  <table style="width: 100%">
 			<tr>
-			  <td style="background-color: #e5a700; border-radius: 5px; color: white; padding: 0 15px 0 15px ;"><h1><b><u>Precio:</u> $<?= $propiedad['precio'] ?></b></h1></td>
+			  <td style="background-color: #01627f; border-radius: 5px; color: white; padding: 0 15px 0 15px ;"><h1><b><u>Precio:</u> $<?= $propiedad['precio'] ?></b></h1></td>
 			</tr>
 		  </table>
 		</div>
