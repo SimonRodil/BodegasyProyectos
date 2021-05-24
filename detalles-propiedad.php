@@ -215,7 +215,7 @@ $query_propiedades_relativas = $con_propiedades->SelDiferentesPropiedades($propi
                 </div>
                 <?php foreach($query_galeria as $galeria): ?>
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                  <a href="images/propiedades/fotos/<?= $galeria['imagen'] ?>" class="image-popup gal-item"><img src="assets/images/propiedades/fotos/<?= $galeria['imagen'] ?>" alt="Image" class="img-fluid"></a>
+                  <a href="assets/images/propiedades/fotos/<?= $galeria['imagen'] ?>" class="image-popup gal-item"><img src="assets/images/propiedades/fotos/<?= $galeria['imagen'] ?>" alt="Image" class="img-fluid"></a>
                 </div>
                 <?php endforeach; ?>
               </div>
