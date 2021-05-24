@@ -12,7 +12,7 @@ td    { vertical-align: top; }
 		<table cellspacing="0" style="width: 100%; text-align: center; font-size: 14px">
 			<tr>
 				<td style="width: 40%; color: #444444; text-align: left">
-					<img style="width: 300px;" src="./images/logo.png" alt="Logo">
+					<img style="width: 300px;" src="./assets/images/logo.png" alt="Logo">
 				</td>
 				<td style="width: 60%; text-align: right; font-weight: bold; font-size: 12px">
 				  <h4 style="color: #1d1a3e; padding: 0"><?= $system['title'] ?></h4>
@@ -36,7 +36,7 @@ td    { vertical-align: top; }
 			  <?php # if(!empty($propiedad['imagen_destacada'])):?>
 			  <?php if(!empty($propiedad['imagen_destacada'])):?>
 			  <td style="width: 50%; text-align: right; padding: 20px">
-				<img src="./images/propiedades/<?= $propiedad['imagen_destacada'] ?>" style="width: 250px;">
+				<img src="./assets/images/propiedades/<?= $propiedad['imagen_destacada'] ?>" style="width: 250px;">
 			  </td>
 			  <?php endif; ?>
 			</tr>
@@ -76,7 +76,7 @@ td    { vertical-align: top; }
 			<table cellspacing="0" style="width: 100%; text-align: center;">
 			  <tr>
 				<?php $i=0; foreach($query_imagenes as $imagen): $i++; ?>
-				<td style="width: 33%; padding: 5px"><img src="./images/propiedades/fotos/<?= $imagen['imagen'] ?>" style="width: 100%"></td>
+				<td style="width: 33%; padding: 5px"><img src="./assets/images/propiedades/fotos/<?= $imagen['imagen'] ?>" style="width: 100%"></td>
 				<?php if($i == 3): break; endif; endforeach; ?>
 			  </tr>
 			</table>
