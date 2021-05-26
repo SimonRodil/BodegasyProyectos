@@ -76,7 +76,7 @@ if(isset($_SESSION['sert_cpanel']['id']) && !empty($_SESSION['sert_cpanel']['id'
   
   <script type="text/javascript" src="../assets/panel/js/core/jquery.min.js"></script>
   <script type="text/javascript" src="../assets/panel/js/plugins/jquery.validate.min.js"></script>
-  <script src="../assets/panellibs/materialize.min.js"></script>
+  <script src="../assets/panel/libs/materialize.min.js"></script>
   <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script> -->
   <!--  Plugin for Sweet Alert -->
   <script src="../assets/panel/js/plugins/sweetalert2.js"></script>

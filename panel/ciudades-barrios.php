@@ -28,14 +28,14 @@ require ('../mod/config.php'); ?>
   <link href="../assets/panel/demo/demo.css" rel="stylesheet" />
   <link href="../assets/panel/datatable/datatables.min.css" rel="stylesheet" />
   <link href="../assets/panel/css/datepicker.min.css" rel="stylesheet" />
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" /> -->
+  
   <!-- Select Picker -->
   <link rel="stylesheet" href="../assets/panel/css/bootstrap-select.css">
 </head>
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/panel/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -354,7 +354,7 @@ require ('../mod/config.php'); ?>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/panel/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Datatable! -->
-  <script src="../assets/paneldatatable/datatables.min.js"></script>
+  <script src="../assets/panel/datatable/datatables.min.js"></script>
   <!-- Main Scripts! -->
   <script src="../assets/panel/js/main.js"></script>
   <!-- Form, Modal, Scripts -->

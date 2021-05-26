@@ -45,7 +45,7 @@ require ('../mod/config.php');
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/panel/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -315,12 +315,12 @@ require ('../mod/config.php');
   <script src="../assets/panel/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Main Scripts! -->
   <script src="../assets/panel/js/main.js"></script>
-  <script src="../assets/panellibs/datepicker.min.js"></script>
-  <script src="../assets/panellibs/datepicker.es-ES.min.js"></script>
+  <script src="../assets/panel/libs/datepicker.min.js"></script>
+  <script src="../assets/panel/libs/datepicker.es-ES.min.js"></script>
   <!-- Datatable! -->
-  <script src="../assets/paneldatatable/datatables.min.js"></script>
-  <script src="../assets/panellibs/summernote-bs4.js"></script>
-  <script src="../assets/panellibs/summernote-es-ES.js"></script>
+  <script src="../assets/panel/datatable/datatables.min.js"></script>
+  <script src="../assets/panel/libs/summernote-bs4.js"></script>
+  <script src="../assets/panel/libs/summernote-es-ES.js"></script>
   <!-- Form, Modal, Scripts -->
   <script src="../assets/panel/js/blog/script.js"></script>
 </body>

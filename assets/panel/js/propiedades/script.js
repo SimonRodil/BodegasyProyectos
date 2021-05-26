@@ -23,7 +23,7 @@ $(document).ready(function() {
       { data: 'precio', "defaultContent": "-" },
       { data: 'ciudad_nombre', "defaultContent": "-" },
       { data: 'barrio_nombre', "defaultContent": "-" },
-      { data: 'address', "defaultContent": "-" },
+      { data: 'direccion', "defaultContent": "-" },
       { data: 'area', "defaultContent": "-" },
       { data: 'ano', "defaultContent": "-" },
       { data: 'tamano_lote', "defaultContent": "-" },
@@ -31,7 +31,7 @@ $(document).ready(function() {
     ],
     responsive: true,
     language: {
-        url: "../assets/datatable/language/Spanish.json"
+        url: "../assets/panel/datatable/language/Spanish.json"
         },
     select: true,
     dom: 'Bfrip',

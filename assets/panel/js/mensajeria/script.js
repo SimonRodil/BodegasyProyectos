@@ -23,7 +23,7 @@ $(document).ready(function() {
     ],
     responsive: true,
     language: {
-        url: "../assets/datatable/language/Spanish.json"
+        url: "../assets/panel/datatable/language/Spanish.json"
         },
     select: true,
     dom: 'Bfrip',
