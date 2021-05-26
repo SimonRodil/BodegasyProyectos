@@ -397,13 +397,13 @@ $query_blog = $con_blog->SelBlogs();
                 <a href="https://instagram.com/bodegasyespacios" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1200"><span class="icon-instagram"></span></a>
                 <a href="#" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1300"><span class="icon-linkedin"></span></a><br><br>
 				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1350">Teléfono</p>
-				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1350"><a href="tel:00573014674251">(+57) 3014674251</a></p>
+				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1350"><a href="tel:0057301 532 83 00"><i class="fl-bigmug-line-phone351 mr-1"></i> (+57) 301 532 83 00</a></p>
 
 				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1400">Correo Electrónico</p>
-				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1450"><a href="mailto:comercial@bodegasyproyectos.com">comercial@bodegasyproyectos.com</a></p>
+				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1450"><a href="mailto:comercial@bodegasyproyectos.com"><i class="fl-bigmug-line-email64 mr-1"></i>comercial@bodegasyproyectos.com</a></p>
 
 				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1500">Dirección</p>
-				  <p class="mb-0" data-aos="fade-up" data-aos-delay="1550">Circular 2 # 70 - 24 of 806, Laureles<br>
+				  <p class="mb-0" data-aos="fade-up" data-aos-delay="1550">Carrera 43B # 16-95 Oficina 1211 - CCI<br>
 				  Medellín - Colombia.</p>
               </div>
         </div>
@@ -428,8 +428,6 @@ $query_blog = $con_blog->SelBlogs();
       </div>
     </div>
   </footer>
-  <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-  <div class="elfsight-app-42d180d0-68ce-4df7-8f85-6d8544fabe45"></div> -->
     
   <div class="wpp-plugin"></div>
   <script src="assets/js/jquery-3.3.1.min.js"></script>
@@ -447,14 +445,6 @@ $query_blog = $con_blog->SelBlogs();
   <script src="assets/js/aos.js"></script>
   <script type="text/javascript" src="assets/libs/floating-wpp.js"></script>
   <script src="assets/js/main.js"></script>
-  <!-- <script>
-    var wtimer = setInterval(function(){
-      if($('#portal-42d180d0-68ce-4df7-8f85-6d8544fabe45 > div > div.Window__WindowComponent-sc-17wvysh-1.llcnCH > div:nth-child(5)').length > 0) {
-        $('#portal-42d180d0-68ce-4df7-8f85-6d8544fabe45 > div > div.Window__WindowComponent-sc-17wvysh-1.llcnCH > div:nth-child(5)').remove();
-        clearInterval(wtimer);
-      }
-    }, 500)
-  </script> -->
     
   </body>
 </html>

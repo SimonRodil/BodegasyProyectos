@@ -179,7 +179,7 @@ endif;
                     <table class="table" propiedad="34">
                       <thead class=" text-primary">
                         <th>
-                          ID
+                          Código
                         </th>
                         <th>
                           Nombre
@@ -190,14 +190,17 @@ endif;
                         <th>
                           Tipo de Oferta
                         </th>
-                        <th>
+                        <th class="to-hide">
                           Precio
                         </th>
-                        <th class="to-hide">
+                        <th>
                           Ciudad
                         </th>
-                        <th class="to-hide">
+                        <th>
                           Barrio
+                        </th>
+                        <th>
+                          Dirección
                         </th>
                         <th class="to-hide">
                           Área

@@ -23,6 +23,7 @@ $(document).ready(function() {
       { data: 'precio', "defaultContent": "-" },
       { data: 'ciudad_nombre', "defaultContent": "-" },
       { data: 'barrio_nombre', "defaultContent": "-" },
+      { data: 'address', "defaultContent": "-" },
       { data: 'area', "defaultContent": "-" },
       { data: 'ano', "defaultContent": "-" },
       { data: 'tamano_lote', "defaultContent": "-" },

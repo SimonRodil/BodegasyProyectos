@@ -471,13 +471,13 @@ $query_propiedades_relativas = $con_propiedades->SelDiferentesPropiedades($propi
                 <a href="https://instagram.com/bodegasyespacios" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1200"><span class="icon-instagram"></span></a>
                 <a href="#" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1300"><span class="icon-linkedin"></span></a><br><br>
 				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1350">Teléfono</p>
-				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1350"><a href="tel:00573014674251">(+57) 3014674251</a></p>
+				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1350"><a href="tel:0057301 532 83 00"><i class="fl-bigmug-line-phone351 mr-1"></i> (+57) 301 532 83 00</a></p>
 
 				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1400">Correo Electrónico</p>
-				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1450"><a href="mailto:comercial@bodegasyproyectos.com">comercial@bodegasyproyectos.com</a></p>
+				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1450"><a href="mailto:comercial@bodegasyproyectos.com"><i class="fl-bigmug-line-email64 mr-1"></i>comercial@bodegasyproyectos.com</a></p>
 
 				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1500">Dirección</p>
-				  <p class="mb-0" data-aos="fade-up" data-aos-delay="1550">Circular 2 # 70 - 24 of 806, Laureles<br>
+				  <p class="mb-0" data-aos="fade-up" data-aos-delay="1550">Carrera 43B # 16-95 Oficina 1211 - CCI<br>
 				  Medellín - Colombia.</p>
               </div>
         </div>

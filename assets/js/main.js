@@ -418,13 +418,13 @@ $('.asesores a').each(function(){
 
 $(function () {
     $('.wpp-plugin').floatingWhatsApp({
-        phone: '573014674251',
+        phone: '573015328300',
         popupMessage: 'Saludos 👋' + '<br><br>' + 'En que podemos ayudarte?',
         message: "",
         size: '56px',
         showPopup: true,
         showOnIE: false,
-        headerTitle: 'Bodegas y Espacios',
+        headerTitle: $('title').text(),
         headerColor: 'rgb(9, 94, 84)',
         backgroundColor: 'crimson',
         position: 'right',
