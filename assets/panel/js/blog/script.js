@@ -58,7 +58,7 @@ $(document).ready(function() {
             
                 
               if(data.image != null) {
-                $('#ver-registro [name=image]').attr('src', '../images/blog/' + data.image);
+                $('#ver-registro [name=image]').attr('src', '../assets/images/blog/' + data.image);
               }
             
               $('.summernote').summernote({ airMode: true });

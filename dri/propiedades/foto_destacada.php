@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 $con_propiedades = new Propiedades();
 $propiedad = $con_propiedades->SelPropiedad($_POST['id'])->fetch_array();
 
-$tmp_files_folder = "../../images/propiedades/tmp/";
+$tmp_files_folder = "../../assets/images/propiedades/tmp/";
 
 // Elimino todo lo que está en la carpeta temporal.
 $files = glob($tmp_files_folder. '*'); // get all file names
@@ -17,7 +17,7 @@ foreach($files as $file){ // iterate files
 }
 
 // requires php5
-define('UPLOAD_DIR', '../../images/propiedades/');
+define('UPLOAD_DIR', '../../assets/images/propiedades/');
 $img = $_POST['image'];
 $img = str_replace('data:image/jpeg;base64,', '', $img);
 $img = str_replace(' ', '+', $img);

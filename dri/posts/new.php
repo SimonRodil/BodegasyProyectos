@@ -32,7 +32,7 @@ if(!isset($_SESSION['sert_cpanel']['id']) || empty($_SESSION['sert_cpanel']['id'
       
         ## Subo la imagen.
         # Planifico la locación donde estará.
-        $location = "../../../images/posts/";
+        $location = "../../../assets/images/posts/";
         
         # Chequeo que si exista la locación a donde vá.
         if(!file_exists($location)) { mkdir($location); }

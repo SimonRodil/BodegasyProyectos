@@ -145,5 +145,5 @@ var $id = $('#id').text();
 
 if($rs > 2) {
   $('[data-background-color]').attr('data-background-color', 'black');
-  $('.logo img').attr('src', '../images/logo-white.png');
+  $('.logo img').attr('src', '../assets/images/logo-white.png');
 }

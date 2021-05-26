@@ -19,7 +19,7 @@ if(!empty($_GET['id'])) {
     
     # Busco la imagen para borrarla.
     $post = $con_posts->SelPost($id)->fetch_array();
-    unlink("../../../images/posts/" . $post['image']);
+    unlink("../../../assets/images/posts/" . $post['image']);
     
     # Procedo a guardar el mensaje.
     $query = $con_posts->DelPost($id);

@@ -42,7 +42,7 @@ require ('../mod/config.php'); ?>
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="../" class="simple-text logo-normal">
-          <img src="../images/logo.png" class="img-fluid" height="50">
+          <img src="../assets/images/logo.png" class="img-fluid" height="50">
         </a></div>
       <div class="sidebar-wrapper">
         <?php require ('structure/menu.php'); ?>
@@ -80,7 +80,7 @@ require ('../mod/config.php'); ?>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                   <a class="dropdown-item" href="perfil.php">Mi Perfil</a>
-                  <a class="dropdown-item" href="#">Configuración</a>
+                  
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Cerrar Sesión</a>
                 </div>

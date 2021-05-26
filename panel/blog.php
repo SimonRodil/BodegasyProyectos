@@ -52,7 +52,7 @@ require ('../mod/config.php');
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="../" class="simple-text logo-normal">
-          <img src="../images/logo.png" class="img-fluid" height="50">
+          <img src="../assets/images/logo.png" class="img-fluid" height="50">
         </a></div>
       <div class="sidebar-wrapper">
         <?php require ('structure/menu.php'); ?>
@@ -74,22 +74,6 @@ require ('../mod/config.php');
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    En desarrollo...
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">#1</a>
-                  <a class="dropdown-item" href="#">#2</a>
-                  <a class="dropdown-item" href="#">#3</a>
-                  <a class="dropdown-item" href="#">#4</a>
-                  <a class="dropdown-item" href="#">#5</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
                   <p class="d-lg-none d-md-block">
@@ -98,7 +82,7 @@ require ('../mod/config.php');
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                   <a class="dropdown-item" href="perfil.php">Mi Perfil</a>
-                  <a class="dropdown-item" href="#">Configuración</a>
+                  
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Cerrar Sesión</a>
                 </div>

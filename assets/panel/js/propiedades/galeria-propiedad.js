@@ -23,7 +23,7 @@ $('#input-foto-galeria').change(function(){
     data: $data,
     success: function(resp){
       if(resp.id == 0) { ErrorQuery(); return; }
-      $('#galeria-propiedad #fotos-cargadas').append('<div class="box"><img src="../images/propiedades/fotos/' + resp.base64 + '"><div class="close" data-id="' + resp.id + '"></div></div>');
+      $('#galeria-propiedad #fotos-cargadas').append('<div class="box"><img src="../assets/images/propiedades/fotos/' + resp.base64 + '"><div class="close" data-id="' + resp.id + '"></div></div>');
       $('#select-foto-galeria .loader').slideUp();
       deleteImage();
       ExitoQuery();
