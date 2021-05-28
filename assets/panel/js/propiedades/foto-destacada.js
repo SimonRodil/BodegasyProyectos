@@ -1,13 +1,15 @@
 function AsignarFotoDestacada(id, tf) {
   // Muestro la imagen destacada.
-  if(data.imagen_destacada != null) {
+  try {
+    if(data.imagen_destacada != null) {
 	  
-	  $('#imagen-destacada-img').attr('src', '../assets/images/propiedades/' + data.imagen_destacada).show();
-	  
-  } else {
+      $('#imagen-destacada-img').attr('src', '../assets/images/propiedades/' + data.imagen_destacada).show();
+      
+    }
+  } catch(error) {
 	  
 	  $('#imagen-destacada-img').attr('src', '../assets/images/propiedades/default.png').show();
-	  
+
   }
 	
   $('#foto-destacada').modal();

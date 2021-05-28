@@ -42,7 +42,7 @@ endif;
     <link rel="stylesheet" href="assets/css/mediaelementplayer.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/fl-bigmug-line.css">
-    <link rel="stylesheet" href="assets/css/aos.css">
+    <!-- <link rel="stylesheet" href="assets/css/aos.css"> -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/libs/floating-wpp.css">
     
@@ -300,10 +300,10 @@ endif;
         <div class="col-lg-3 mb-5 mb-lg-0">
           <h3 class="footer-heading mb-4" data-aos="fade-up" data-aos-delay="900">Siguenos</h3>
               <div>
-                <a href="#" class="pl-0 pr-3" data-aos="fade-up" data-aos-delay="1000"><span class="icon-facebook"></span></a>
-                <a href="#" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1100"><span class="icon-twitter"></span></a>
-                <a href="https://instagram.com/bodegasyespacios" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1200"><span class="icon-instagram"></span></a>
-                <a href="#" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1300"><span class="icon-linkedin"></span></a><br><br>
+                <a href="https://www.facebook.com/bodegasyproyectos" class="pl-0 pr-3" data-aos="fade-up" data-aos-delay="1000"><span class="icon-facebook"></span></a>
+                <a href="https://twitter.com/bodegasyproyect" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1100"><span class="icon-twitter"></span></a>
+                <a href="https://www.instagram.com/bodegasyproyectos/" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1200"><span class="icon-instagram"></span></a>
+                <a href="https://www.linkedin.com/in/bodegasyproyectos" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1300"><span class="icon-linkedin"></span></a><br><br>
 				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1350">Teléfono</p>
 				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1350"><a href="tel:0057301 532 83 00"><i class="fl-bigmug-line-phone351 mr-1"></i> (+57) 301 532 83 00</a></p>
 
@@ -350,7 +350,7 @@ endif;
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script src="assets/js/bootstrap-datepicker.min.js"></script>
   <script src="assets/libs/sweetalert2.js"></script>
-  <script src="assets/js/aos.js"></script>
+  <!-- <script src="assets/js/aos.js"></script> -->
   <script type="text/javascript" src="assets/libs/floating-wpp.js"></script>
   <script src="assets/js/main.js"></script>
     

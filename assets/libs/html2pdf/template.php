@@ -1,18 +1,10 @@
-<style type="text/css">
-<!--
-table { vertical-align: top; }
-tr    { vertical-align: top; }
-td    { vertical-align: top; }
-}
--->
-</style>
 <page backcolor="#FEFEFE" backtop="0" backbottom="30mm" footer="date;heure;page" style="font-size: 12pt">
     <div style="max-width: 100%;">
 		<bookmark title="Lettre" level="0" ></bookmark>
 		<table cellspacing="0" style="width: 100%; text-align: center; font-size: 14px">
 			<tr>
 				<td style="width: 40%; color: #444444; text-align: left">
-					<img style="width: 300px;" src="./images/logo.png" alt="Logo">
+					<img style="width: 300px;" src="./assets/images/logo.png" alt="Logo">
 				</td>
 				<td style="width: 60%; text-align: right; font-weight: bold; font-size: 12px">
 				  <h4 style="color: #1d1a3e; padding: 0"><?= $system['title'] ?></h4>
@@ -28,22 +20,23 @@ td    { vertical-align: top; }
 			<tr>
 			  <td style="width: 50%; text-align: left">
 				<ul style="list-style: none; margin: 0; padding: 0">
-				  <li><h3>Nombre de la Propiedad:<br>- <?= $propiedad['nombre'] ?></h3></li>
-				  <li><h3>Tipo de Oferta:<br>- <?= $propiedad['tipo_oferta_nombre'] ?></h3></li>
-				  <li><h3>Tipo de Inmueble:<br>- <?= $propiedad['tipo_propiedad'] ?></h3></li>
+				  <li><h4>Nombre de la Propiedad:<br>- <?= $propiedad['nombre'] ?></h4></li>
+				  <li><h4>Código:<br><?= $propiedad['id'] ?></h4></li>
+				  <li><h4>Tipo de Oferta:<br>- <?= $propiedad['tipo_oferta_nombre'] ?></h4></li>
+				  <li><h4>Tipo de Inmueble:<br>- <?= $propiedad['tipo_propiedad'] ?></h4></li>
 				</ul>
 			  </td>
 			  <?php # if(!empty($propiedad['imagen_destacada'])):?>
 			  <?php if(!empty($propiedad['imagen_destacada'])):?>
 			  <td style="width: 50%; text-align: right; padding: 20px">
-				<img src="./images/propiedades/<?= $propiedad['imagen_destacada'] ?>" style="width: 250px;">
+				<img src="./assets/images/propiedades/<?= $propiedad['imagen_destacada'] ?>" style="width: 250px;">
 			  </td>
 			  <?php endif; ?>
 			</tr>
 		  </table>
 		  <table style="width: 100%">
 			<tr>
-			  <td style="background-color: #e5a700; border-radius: 5px; color: white; padding: 0 15px 0 15px ;"><h1><b><u>Precio:</u> $<?= $propiedad['precio'] ?></b></h1></td>
+			  <td style="background-color: #e5a700; border-radius: 5px; color: white; padding: 0 15px 0 15px ;"><h2><b><u>Precio:</u> $<?= $propiedad['precio'] ?></b></h2></td>
 			</tr>
 		  </table>
 		</div>
@@ -76,7 +69,7 @@ td    { vertical-align: top; }
 			<table cellspacing="0" style="width: 100%; text-align: center;">
 			  <tr>
 				<?php $i=0; foreach($query_imagenes as $imagen): $i++; ?>
-				<td style="width: 33%; padding: 5px"><img src="./images/propiedades/fotos/<?= $imagen['imagen'] ?>" style="width: 100%"></td>
+				<td style="width: 33%; padding: 5px"><img src="./assets/images/propiedades/fotos/<?= $imagen['imagen'] ?>" style="width: 100%"></td>
 				<?php if($i == 3): break; endif; endforeach; ?>
 			  </tr>
 			</table>

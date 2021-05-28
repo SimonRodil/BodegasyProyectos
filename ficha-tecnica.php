@@ -31,11 +31,11 @@ $query_imagenes = $con_galeria->SelGaleria($propiedad['id']);
 
     // get the HTML
     ob_start();
-    require('./libs/html2pdf/template.php');
+    require('./assets/libs/html2pdf/template.php');
     $content = ob_get_clean();
 
     // convert to PDF
-    require_once('./libs/html2pdf/html2pdf.class.php');
+    require_once('./assets/libs/html2pdf/html2pdf.class.php');
     try
     {
         $html2pdf = new HTML2PDF('P', 'A4', 'es');
