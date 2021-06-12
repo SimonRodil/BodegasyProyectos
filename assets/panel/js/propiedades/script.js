@@ -376,7 +376,8 @@ $(document).ready(function() {
           $selBarrio.append("<option value='-'>Sin seleccionar</option>");
           $.each(data.responseJSON, function(index, value){
             $selBarrio.append("<option value='" + value.id + "'>" + value.nombre + "</option>");
-            $selBarrio.prop('disabled', false); $selBarrio.selectpicker('refresh');
+            $selBarrio.prop('disabled', false); $selBarrio.val('-');
+            $selBarrio.selectpicker('refresh');
           });
           if($barrio != null) {
             $selBarrio.selectpicker('val', $barrio);
