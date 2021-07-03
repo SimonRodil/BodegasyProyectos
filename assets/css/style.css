@@ -136,7 +136,10 @@ a {
   box-shadow: none !important; }
 
 .site-section {
-  padding: 3em 0; }
+  padding: 3em 0; 
+  background-size: cover;
+  background-position: center;
+}
   @media (min-width: 768px) {
     .site-section {
       padding: 7em 0; } }
@@ -1161,9 +1164,22 @@ a {
 
 .site-blocks-cover.sb-small, .site-blocks-cover.sb-small .row {
   min-height: 250px; 
-  height: calc(60vh - 134px);
+  /* height: calc(60vh - 134px); */
 }
 
 .site-navbar h1 > a > img {
 	height: 80px;
+}
+
+.site-wrap.absolute {
+  position: absolute;
+  width: 100%;
+}
+
+.home-slider {
+  height: 100vh;
+}
+
+.site-blocks-cover {
+  height: 100%;
 }

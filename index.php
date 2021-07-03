@@ -65,7 +65,7 @@ $query_blog = $con_blog->SelBlogs();
   
   <div class="site-loader"></div>
   
-  <div class="site-wrap">
+  <div class="site-wrap absolute">
 
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
@@ -113,7 +113,7 @@ $query_blog = $con_blog->SelBlogs();
   </div>
 
   <div class="home-slider">
-    <div class="site-blocks-cover" style="background-image: url(assets/images/home-bg.JPG);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover" style="background-image: url(assets/images/bg_main.jpg);" data-aos="fade">
       <div class="text" data-aos="fade-up">
         <h1 class="text-black" data-aos="fade-up" data-aos-delay="200">¡Bienvenido!</h1>
         <p class="mb-2 text-black" data-aos="fade-up" data-aos-delay="400"><strong>Aquí encontrarás lo que estás buscando, en un solo clíc.</strong></p>
