@@ -116,7 +116,7 @@ $query_blog = $con_blog->SelBlogs();
     <div class="site-blocks-cover" style="background-image: url(assets/images/bg_main.jpg);" data-aos="fade">
       <div class="text" data-aos="fade-up">
         <h1 class="text-black" data-aos="fade-up" data-aos-delay="200">¡Bienvenido!</h1>
-        <p class="mb-2 text-black" data-aos="fade-up" data-aos-delay="400"><strong>Aquí encontrarás lo que estás buscando, en un solo clíc.</strong></p>
+        <p class="mb-2 text-black" data-aos="fade-up" data-aos-delay="400"><strong>Aquí encontrarás lo que estás buscando, <span class="text-orange">en un solo clíc.</span></strong></p>
         <a href="./#filter-div" class="btn btn-primary text-uppercase rounded-0 letter-spacing-1" data-aos="fade-up" data-aos-delay="800" data-aos-anchor-placement="top-bottom"><i class="icon-search"></i> EMPEZAR</a>
       </div>
     </div>  
@@ -421,7 +421,7 @@ $query_blog = $con_blog->SelBlogs();
       <div class="row pt-5 mt-5 text-center">
         <div class="col-md-12">
           <p>
-          Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Desarrollado por <a href="https://wa.me/584121656014" target="_blank" ><img src="assets/images/logo_sr.png" height="15" style="margin-bottom: 1px"></a>
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Desarrollado por <a href="https://simonrodil.website/" target="_blank" ><img src="assets/images/logo_sr.png" height="15" style="margin-bottom: 1px"></a>
           </p>
         </div>
 

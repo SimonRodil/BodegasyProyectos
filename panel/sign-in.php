@@ -31,7 +31,8 @@ if(isset($_SESSION['sert_cpanel']['id']) && !empty($_SESSION['sert_cpanel']['id'
     <style>
       body {
         /* background: url(../assets/img/cover.jpg) center no-repeat; */
-        background: #e6e6e6;
+        background: url(../assets/panel/img/bg_login.jpg) #e6e6e6;
+        /* background: #e6e6e6; */
         background-size: cover;
       }
     </style>

@@ -499,7 +499,7 @@ $query_propiedades_relativas = $con_propiedades->SelDiferentesPropiedades($propi
       <div class="row pt-5 mt-5 text-center">
         <div class="col-md-12">
           <p>
-          Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Desarrollado por <a href="https://wa.me/584121656014" target="_blank" ><img src="assets/images/logo_sr.png" height="15" style="margin-bottom: 1px"></a>
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Desarrollado por <a href="https://simonrodil.website/" target="_blank" ><img src="assets/images/logo_sr.png" height="15" style="margin-bottom: 1px"></a>
           </p>
         </div>
 
