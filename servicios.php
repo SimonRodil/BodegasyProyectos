@@ -191,15 +191,15 @@ require ('mod/config.php');
                 <a href="https://twitter.com/bodegasyproyect" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1100"><span class="icon-twitter"></span></a>
                 <a href="https://www.instagram.com/bodegasyproyectos/" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1200"><span class="icon-instagram"></span></a>
                 <a href="https://www.linkedin.com/in/bodegasyproyectos" class="pl-3 pr-3" data-aos="fade-up" data-aos-delay="1300"><span class="icon-linkedin"></span></a><br><br>
-				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1350">Teléfono</p>
-				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1350"><a href="tel:0057301 532 83 00"><i class="fl-bigmug-line-phone351 mr-1"></i> (+57) 301 532 83 00</a></p>
+                <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1350">Teléfono</p>
+                <p class="mb-4" data-aos="fade-up" data-aos-delay="1350"><a href="tel:0057301 532 83 00"><i class="fl-bigmug-line-phone351 mr-1"></i> (+57) 301 532 83 00</a></p>
 
-				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1400">Correo Electrónico</p>
-				  <p class="mb-4" data-aos="fade-up" data-aos-delay="1450"><a href="mailto:comercial@bodegasyproyectos.com"><i class="fl-bigmug-line-email64 mr-1"></i>comercial@bodegasyproyectos.com</a></p>
+                <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1400">Correo Electrónico</p>
+                <p class="mb-4" data-aos="fade-up" data-aos-delay="1450"><a href="mailto:comercial@bodegasyproyectos.com"><i class="fl-bigmug-line-email64 mr-1"></i>comercial@bodegasyproyectos.com</a></p>
 
-				  <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1500">Dirección</p>
-				  <p class="mb-0" data-aos="fade-up" data-aos-delay="1550">Carrera 43B # 16-95 Oficina 1211 - CCI<br>
-				  Medellín - Colombia.</p>
+                <p class="mb-0 font-weight-bold" data-aos="fade-up" data-aos-delay="1500">Dirección</p>
+                <p class="mb-0" data-aos="fade-up" data-aos-delay="1550">Carrera 43B # 16-95 Oficina 1211 - CCI<br>
+                Medellín - Colombia.</p>
               </div>
         </div>
 
@@ -251,7 +251,7 @@ require ('mod/config.php');
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body"><p>Todas las empresas tienen necesidades importantes y especificas, es por esto que en BODEGAS & ESPACIOS, contamos con asesores con una alta experiencia y conocimiento en el sector inmobiliario industrial y comercial, los cuales a través de un análisis especifico de su actividad comercial y necesidad, le ayudarán a encontrar la ubicación y las características adecuadas para su operación, logrando así una mayor competitividad e impacto en el mercado. </p>
+        <div class="modal-body"><p>Todas las empresas tienen necesidades importantes y especificas, es por esto que en BODEGAS & PROYECTOS, contamos con asesores con una alta experiencia y conocimiento en el sector inmobiliario industrial y comercial, los cuales a través de un análisis especifico de su actividad comercial y necesidad, le ayudarán a encontrar la ubicación y las características adecuadas para su operación, logrando así una mayor competitividad e impacto en el mercado. </p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -269,7 +269,7 @@ require ('mod/config.php');
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body"><p>Todas las empresas tienen necesidades importantes y especificas, es por esto que en BODEGAS & ESPACIOS, contamos con asesores con una alta experiencia y conocimiento en el sector inmobiliario industrial y comercial, los cuales a través de un análisis especifico de su actividad comercial y necesidad, le ayudarán a encontrar la ubicación y las características adecuadas para su operación, logrando así una mayor competitividad e impacto en el mercado. </p>
+        <div class="modal-body"><p>Todas las empresas tienen necesidades importantes y especificas, es por esto que en BODEGAS & PROYECTOS, contamos con asesores con una alta experiencia y conocimiento en el sector inmobiliario industrial y comercial, los cuales a través de un análisis especifico de su actividad comercial y necesidad, le ayudarán a encontrar la ubicación y las características adecuadas para su operación, logrando así una mayor competitividad e impacto en el mercado. </p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -288,7 +288,7 @@ require ('mod/config.php');
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body"><p>La administración de un inmueble es una gran responsabilidad para nuestra empresa, es por esto que en BODEGAS & ESPACIOS, contamos con un gran equipo de ingenieros industriales, administradores, abogados y un eficiente departamento de mantenimientos, todos especializados en la administración de inmuebles industriales y comerciales y el manejo de relaciones con nuestros clientes. <br><br>
+        <div class="modal-body"><p>La administración de un inmueble es una gran responsabilidad para nuestra empresa, es por esto que en BODEGAS & PROYECTOS, contamos con un gran equipo de ingenieros industriales, administradores, abogados y un eficiente departamento de mantenimientos, todos especializados en la administración de inmuebles industriales y comerciales y el manejo de relaciones con nuestros clientes. <br><br>
 
 Al escogernos para administrar tu inmueble, contarás con todo nuestro equipo el cual se encargará de estar pendiente del buen estado de tu inmueble, y de la administración del mismo, con el objetivo de sostener la relación cordial y duradera en el tiempo con el inquilino, y de sacar el mayor provecho a sus inversiones y propiedades. <br><br>
 

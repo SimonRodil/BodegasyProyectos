@@ -219,7 +219,7 @@ $query_propiedades_relativas = $con_propiedades->SelDiferentesPropiedades($propi
                 </div>
                 <?php foreach($query_galeria as $galeria): ?>
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                  <a href="images/propiedades/fotos/<?= $galeria['imagen'] ?>" class="image-popup gal-item"><img src="assets/images/propiedades/fotos/<?= $galeria['imagen'] ?>" alt="Image" class="img-fluid"></a>
+                  <a href="assets/images/propiedades/fotos/<?= $galeria['imagen'] ?>" class="image-popup gal-item"><img src="assets/images/propiedades/fotos/<?= $galeria['imagen'] ?>" alt="Image" class="img-fluid"></a>
                 </div>
                 <?php endforeach; ?>
               </div>
@@ -236,11 +236,11 @@ $query_propiedades_relativas = $con_propiedades->SelDiferentesPropiedades($propi
                   
                   <p><a href="tel:<?= $asesor['telephone'] ?>" class="pt-4 pr-2"><span class="icon-phone"></span></a> <?= $asesor['telephone'] ?></p>
                 <p class="pl-0">
-                  <a href="#" class="btn btn-danger"><span class="icon-instagram"></span></a> 
-                  <a href="#" class="btn btn-blue-fb"><span class="icon-facebook"></span></a>
-                  <a href="#" class="btn btn-info"><span class="icon-twitter"></span></a>
-                  <a href="#" class="btn btn-linkedin"><span class="icon-linkedin"></span></a>
-                  <a href="#" class="btn btn-primary"><span class="icon-envelope"></span></a>
+                  <a href="<?= $asesor['instagram'] != '' ? : "#" ?>" class="btn btn-danger"><span class="icon-instagram"></span></a> 
+                  <a href="<?= $asesor['facebook'] != '' ? : "#" ?>" class="btn btn-blue-fb"><span class="icon-facebook"></span></a>
+                  <a href="<?= $asesor['twitter'] != '' ? : "#" ?>" class="btn btn-info"><span class="icon-twitter"></span></a>
+                  <a href="<?= $asesor['linkedin'] != '' ? : "#" ?>" class="btn btn-linkedin"><span class="icon-linkedin"></span></a>
+                  <a href="mailto:<?= $asesor['email'] ?>" class="btn btn-primary"><span class="icon-envelope"></span></a>
                 </p>
               </div>
               <hr>

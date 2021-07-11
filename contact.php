@@ -150,7 +150,7 @@
               <p>¡En caso de que necesites un contacto directo e inmediato! Puedes usar las siguientes plataformas:</p>
               <p class="mb-0 font-weight-bold">Teléfono</p>
               <p class="mb-4"><a href="tel:0057301 532 83 00">(+57) 301 532 83 00</a></p>
-              <p class="mb-4">PBX: </p>
+              <p class="mb-4">PBX: 444 76 43</p>
 
               <p class="mb-0 font-weight-bold">Correo Electrónico</p>
               <p class="mb-4"><a href="mailto:comercial@bodegasyproyectos.com">comercial@bodegasyproyectos.com</a></p>
