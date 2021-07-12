@@ -67,12 +67,12 @@ try {
 
   // Cabeceras adicionales
   $cabeceras .= 'To: Andres Rios <' . $para . '>' . "\r\n";
-  $cabeceras .= 'From: Bodegas & Locales <system@bodegasylocales.com>' . "\r\n";
+  $cabeceras .= 'From: Bodegas & Proyectos <system@bodegasyproyectos.com>' . "\r\n";
 
   // Enviarlo
   $query = mail($para, $asunto, $mensaje, $cabeceras);
 
-} catch (Exception);
+} catch (Exception $e) {}
 
 $query = $con_mensajeria->NewMensaje($propiedad['asesor'], $nombre, $telefono, $email, $mensaje, $propiedad['id']);
 

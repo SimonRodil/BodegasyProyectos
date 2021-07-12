@@ -33,7 +33,7 @@ $cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
 // Cabeceras adicionales
 $cabeceras .= 'To: Andres Rios <' . $para . '>' . "\r\n";
-$cabeceras .= 'From: Bodegas & Locales <system@bodegasylocales.com>' . "\r\n";
+$cabeceras .= 'From: Bodegas & Proyectos <system@bodegasyproyectos.com>' . "\r\n";
 
 // Enviarlo
 $query = mail($para, $asunto, $mensaje, $cabeceras);
