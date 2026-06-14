@@ -27,9 +27,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('propiedades/{property}/foto-destacada', [PropertyController::class, 'uploadFeaturedImage'])->name('propiedades.foto-destacada');
         Route::post('propiedades/tmp-upload', [PropertyController::class, 'tmpUpload'])->name('propiedades.tmp-upload');
 
-        Route::get('/usuarios/data', [UserController::class, 'data'])->name('usuarios.data');
         Route::resource('usuarios', UserController::class)->parameters(['usuarios' => 'user']);
-        Route::post('usuarios/{user}/foto', [UserController::class, 'uploadPhoto'])->name('usuarios.foto');
+        Route::get('usuarios/{user}/foto', [UserController::class, 'foto'])->name('usuarios.foto');
+        Route::post('usuarios/{user}/foto', [UserController::class, 'uploadPhoto'])->name('usuarios.foto-upload');
         Route::post('usuarios/tmp-upload', [UserController::class, 'tmpUpload'])->name('usuarios.tmp-upload');
 
         Route::get('/ciudades/data', [CityController::class, 'data'])->name('ciudades.data');

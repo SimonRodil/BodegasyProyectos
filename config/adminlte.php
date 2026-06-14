@@ -109,10 +109,7 @@ return [
     'laravel_js_path' => 'resources/js/admin.js',
 
     'menu' => [
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+        ['header' => 'general'],
         [
             'text' => 'Dashboard',
             'url' => 'admin/dashboard',
@@ -124,46 +121,44 @@ return [
             'icon' => 'fas fa-fw fa-store',
             'active' => ['admin/propiedades*'],
         ],
-        [
-            'text' => 'Usuarios',
-            'url' => 'admin/usuarios',
-            'icon' => 'fas fa-fw fa-users',
-            'can' => 'manage-users',
-            'active' => ['admin/usuarios*'],
-        ],
-        [
-            'text' => 'Ciudades y Barrios',
-            'url' => 'admin/ciudades',
-            'icon' => 'fas fa-fw fa-map-marker-alt',
-            'can' => 'manage-users',
-            'active' => ['admin/ciudades*', 'admin/barrios*'],
-        ],
-        [
-            'text' => 'Blog',
-            'url' => 'admin/blog',
-            'icon' => 'fas fa-fw fa-book',
-            'can' => 'manage-users',
-            'active' => ['admin/blog*'],
-        ],
+        ['header' => 'comunicacion'],
         [
             'text' => 'Mensajes',
             'icon' => 'fas fa-fw fa-envelope',
-            'active' => ['admin/mensajes*', 'admin/contacto*'],
+            'active' => ['admin/mensajes*'],
             'submenu' => [
                 [
-                    'text' => 'Mensajes',
+                    'text' => 'Bandeja',
                     'url' => 'admin/mensajes',
                     'icon' => 'fas fa-fw fa-inbox',
-                    'active' => ['admin/mensajes*'],
                 ],
                 [
                     'text' => 'Contacto',
                     'url' => 'admin/contacto',
                     'icon' => 'fas fa-fw fa-id-card',
-                    'active' => ['admin/contacto*'],
                 ],
             ],
         ],
+        ['header' => 'administracion'],
+        [
+            'text' => 'Usuarios',
+            'url' => 'admin/usuarios',
+            'icon' => 'fas fa-fw fa-users',
+            'active' => ['admin/usuarios*'],
+        ],
+        [
+            'text' => 'Blog',
+            'url' => 'admin/blog',
+            'icon' => 'fas fa-fw fa-book',
+            'active' => ['admin/blog*'],
+        ],
+        [
+            'text' => 'Ciudades',
+            'url' => 'admin/ciudades',
+            'icon' => 'fas fa-fw fa-map-marker-alt',
+            'active' => ['admin/ciudades*', 'admin/barrios*'],
+        ],
+        ['header' => 'reportes'],
         [
             'text' => 'Reportes',
             'url' => 'admin/reportes',

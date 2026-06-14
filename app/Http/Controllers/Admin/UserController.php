@@ -20,6 +20,11 @@ class UserController extends Controller
         return response()->json(User::all());
     }
 
+    public function create()
+    {
+        return view('admin.users.create');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -48,12 +53,19 @@ class UserController extends Controller
             'instagram' => $request->instagram,
         ]);
 
-        return response('success');
+        return redirect()->route('admin.usuarios.index')->with('success', 'Usuario creado correctamente');
     }
 
     public function show($id)
     {
-        return response()->json(User::findOrFail($id));
+        $user = User::findOrFail($id);
+        return view('admin.users.show', compact('user'));
+    }
+
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
     }
 
     public function update(Request $request, $id)
@@ -79,7 +91,7 @@ class UserController extends Controller
         }
         $user->update($data);
 
-        return response('success');
+        return redirect()->route('admin.usuarios.show', $user)->with('success', 'Usuario actualizado correctamente');
     }
 
     public function destroy($id)
@@ -90,6 +102,12 @@ class UserController extends Controller
         }
         $user->delete();
         return response('success');
+    }
+
+    public function foto($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.users.foto', compact('user'));
     }
 
     public function uploadPhoto(Request $request, $id)
@@ -106,7 +124,7 @@ class UserController extends Controller
         }
 
         $user->update(['profile_pic' => $filename]);
-        return response()->json(['success' => true]);
+        return response()->json(['profile_pic' => $filename]);
     }
 
     public function tmpUpload(Request $request)
