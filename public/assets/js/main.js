@@ -206,37 +206,16 @@ jQuery(document).ready(function($) {
 			});
 		}
 
-		if ( $('.propiedades > .slide-one-item').length > 4 ) {
+		if ( $('.propiedades > .slide-one-item').length > 0 ) {
 			$('.propiedades').addClass('owl-carousel').owlCarousel({
-		    center: true,
 		    loop: true,
 		    autoplay: true,
 		    pauseOnHover: true,
         dots: true,
-        dotsEach: true,
-		    animateOut: 'fadeOut',
-		    animateIn: 'fadeIn',
-		    responsive:{
-	        300:{
-	        	margin: 40,
-	        	stagePadding: 0,
-	          items: 1
-	        },
-	        700:{
-	        	margin: 20,
-	        	stagePadding: 0,
-	          items: 2
-	        },
-	        1000:{
-	        	margin: 20,
-	        	stagePadding: 0,
-	          items: 3
-	        } /*,
-	        1200:{
-	        	margin: 20,
-	        	stagePadding: 0,
-	          items: 3
-	        } */
+        responsive:{
+	        300:{ items: 1, margin: 20 },
+	        700:{ items: 2, margin: 20 },
+	        1000:{ items: 3, margin: 20 }
 		    }
 		  });
 	  } else {
@@ -368,9 +347,8 @@ jQuery(document).ready(function($) {
     if($ciudad != null) {
       $.ajax({
         beforeSend: function() { $selBarrio.empty(); },
-        url: 'dri/barrios/sel.php',
+        url: '/api/barrios/' + $ciudad,
         method: 'GET',
-        data: { ciudad: $ciudad },
         complete: function(data) {
           $selBarrio.append("<option value='-'>Barrio</option>");
           $.each(data.responseJSON, function(index, value){

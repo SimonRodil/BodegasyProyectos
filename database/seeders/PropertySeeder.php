@@ -21,7 +21,6 @@ class PropertySeeder extends Seeder
                 'descripcion' => 'Amplia bodega en Laureles con excelente ubicación, cerca a vías principales.',
                 'ciudad' => 1,
                 'barrio' => 1,
-                'imagen_destacada' => 'default.jpg',
                 'direccion' => 'Carrera 70 # 45-20',
                 'precio' => 850000000,
             ],
@@ -36,7 +35,6 @@ class PropertySeeder extends Seeder
                 'descripcion' => 'Local comercial en El Poblado, excelente flujo de clientes.',
                 'ciudad' => 1,
                 'barrio' => 2,
-                'imagen_destacada' => 'default.jpg',
                 'direccion' => 'Calle 10 # 35-50',
                 'precio' => 3500000,
             ],
@@ -51,7 +49,6 @@ class PropertySeeder extends Seeder
                 'descripcion' => 'Oficina amoblada en Chapinero, lista para usar.',
                 'ciudad' => 2,
                 'barrio' => 7,
-                'imagen_destacada' => 'default.jpg',
                 'direccion' => 'Calle 72 # 10-30',
                 'precio' => 320000000,
             ],
@@ -66,7 +63,6 @@ class PropertySeeder extends Seeder
                 'descripcion' => 'Bodega con amplio parqueadero y fácil acceso.',
                 'ciudad' => 3,
                 'barrio' => 10,
-                'imagen_destacada' => 'default.jpg',
                 'direccion' => 'Calle 5 # 40-20',
                 'precio' => 1200000000,
             ],
@@ -81,13 +77,13 @@ class PropertySeeder extends Seeder
                 'descripcion' => 'Terreno en zona de expansión, ideal para proyecto industrial.',
                 'ciudad' => 4,
                 'barrio' => 13,
-                'imagen_destacada' => 'default.jpg',
                 'direccion' => 'Vía al Mar Km 5',
                 'precio' => 2500000000,
             ],
         ];
 
-        foreach ($properties as $data) {
+        foreach ($properties as $i => $data) {
+            $data['imagen_destacada'] = 'propiedad-' . ($i + 1) . '.jpg';
             Property::create($data);
         }
     }
