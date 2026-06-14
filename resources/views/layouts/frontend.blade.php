@@ -89,7 +89,7 @@
                         <p>Somos una Red de Profesionales con la mayor experiencia en finca Raíz y el Sector Inmobiliario. Nuestra Agencia te Ofrece Importantes Proyectos en Alquiler, Venta y Administración de Bodegas, Oficinas, Locales, Lotes y Consultorios.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-5 mb-lg-0">
+                <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
                     <div class="row mb-5">
                         <div class="col-md-12">
                             <h3 class="footer-heading mb-4">Menú de Navegación</h3>
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-5 mb-lg-0">
+                <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="footer-heading mb-4">Siguenos</h3>
                     <div>
                         <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
@@ -125,7 +125,7 @@
                         <p class="mb-0">Circular 2 # 70 - 24 of 806, Laureles<br>Medellín - Colombia.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-5 mb-lg-0">
+                <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
                     <div class="mb-5 text-center">
                         <h3 class="footer-heading mb-4">OFERTE con NOSOTROS</h3>
                         <h1 class="text-white"><span class="icon icon-home"></span></h1>
