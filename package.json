@@ -7,10 +7,8 @@
         "dev": "vite"
     },
     "devDependencies": {
-        "@tailwindcss/vite": "^4.0.0",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^3.1",
-        "tailwindcss": "^4.0.0",
         "vite": "^8.0.0"
     },
     "dependencies": {
@@ -27,8 +25,6 @@
         "jquery-steps": "^1.1.0",
         "jquery-ui-dist": "^1.13.3",
         "magnific-popup": "^1.2.0",
-        "materialize-css": "^1.0.0",
-        "mediaelement": "^7.1.0",
         "moment": "^2.30.1",
         "owl.carousel": "^2.3.4",
         "popper.js": "^1.16.1",
