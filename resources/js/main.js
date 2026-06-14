@@ -2,13 +2,6 @@ import $ from 'jquery';
 import Swal from 'sweetalert2';
 import AOS from 'aos';
 
-window.clickPropiedades = function() {
-  $('.propiedades .prop-entry').css('cursor', 'pointer').click(function(){
-    var $id = $(this).find('[data-id]').attr('data-id');
-    location.assign('detalles-propiedad?propiedad=' + $id);
-  });
-};
-
 $(function() {
   "use strict";
 
@@ -192,22 +185,7 @@ $(function() {
       });
     }
 
-    $('ul.site-menu [href*=".php"], [href*=".php"]').each(function(index){
-      var $link = $(this).attr('href');
-      var $newlink = $link.replace(".php", "");
-      $(this).attr('href', $newlink);
-    });
 
-    $('ul.site-menu [href="index"], [href="index"]').each(function(index){
-      var $link = $(this).attr('href');
-      var $newlink = $link.replace("index", "./");
-      $(this).attr('href', $newlink);
-    });
-
-    var ModuleURL = (location.pathname).slice((location.pathname).lastIndexOf("/") + 1);
-    $("ul.site-menu li:has(a[href='./" + ModuleURL + "'])").addClass("active");
-
-    clickPropiedades();
 
     $('.propiedades [data-id]').html('<small>VER<small>');
   };
@@ -274,57 +252,7 @@ $(function() {
   });
 });
 
-$('[name="ciudad"]').change(function(){
-  var $form = $(this).closest('form');
-  var $selBarrio = $form.find('[name="barrio"]');
-  var $ciudad = $(this).val();
 
-  if($ciudad != null) {
-    $.ajax({
-      beforeSend: function() { $selBarrio.empty(); },
-      url: '/api/barrios/' + $ciudad,
-      method: 'GET'
-    }).done(function(data) {
-      $selBarrio.append("<option value='-'>Barrio</option>");
-      $.each(data, function(index, value){
-        $selBarrio.append("<option value='" + value.id + "'>" + value.nombre + "</option>");
-      });
-    });
-  }
-});
-
-$('[name="codigo"]').on('focus',function(){
-  $('select').css('opacity', '0.5');
-}, function(){
-  $('select').css('opacity', 1);
-});
-
-$('[name="codigo"]').on('keyup', function(){
-  if($(this).val() != '') {
-    $('select').parent().parent().slideUp();
-  } else {
-    $('select').parent().parent().slideDown();
-  }
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-function isUrlValid(url) {
-  return /^(https?|s?ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
-}
-
-$('.asesores a').each(function(){
-  if(!isUrlValid($(this).attr('href'))) {
-    $(this).attr('href', '#').removeAttr('target').attr('disabled', true);
-  }
-});
 
 $(function () {
   $('.wpp-plugin').floatingWhatsApp({

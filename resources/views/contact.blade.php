@@ -13,10 +13,13 @@
 
 <div class="site-section">
     <div class="container">
+        @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
         <div class="row">
             <div class="col-lg-7">
                 <h2 class="h4 mb-4">Formulario de Contacto</h2>
-                <form id="form-contact" method="post">
+                <form id="form-contact" method="post" action="{{ route('contact.send') }}">
                     @csrf
                     <div class="row">
                         <div class="col-md-6 form-group">
@@ -68,6 +71,3 @@
 </div>
 @endsection
 
-@push('scripts')
-<script src="{{ asset('assets/js/contact.js') }}"></script>
-@endpush

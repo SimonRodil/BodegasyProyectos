@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use App\Models\City;
+use App\Models\Neighborhood;
 use App\Models\PropertyImage;
+use App\Models\ContactMessage;
+use Illuminate\Http\Request;
 
 class PropertyController extends Controller
 {
@@ -12,7 +15,8 @@ class PropertyController extends Controller
     {
         $properties = Property::with(['city', 'neighborhood'])->latest()->get();
         $cities = City::all();
-        return view('properties.index', compact('properties', 'cities'));
+        $neighborhoods = Neighborhood::all();
+        return view('properties.index', compact('properties', 'cities', 'neighborhoods'));
     }
 
     public function show($id)
@@ -58,12 +62,37 @@ class PropertyController extends Controller
         $properties = $query->latest()->skip(($pagina - 1) * $perPage)->take($perPage)->get();
 
         $cities = City::all();
+        $neighborhoods = Neighborhood::all();
+        $totalPages = (int) ceil($total / $perPage);
 
         if (request()->ajax()) {
             return response()->json($properties);
         }
 
-        return view('properties.filter', compact('properties', 'cities', 'total', 'pagina', 'perPage', 'filters'));
+        return view('properties.filter', compact('properties', 'cities', 'neighborhoods', 'total', 'pagina', 'perPage', 'totalPages', 'filters'));
+    }
+
+    public function contactAdvisor($id, Request $request)
+    {
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'telefono' => 'nullable|string|max:50',
+            'mensaje' => 'required|string',
+        ]);
+
+        $msg = "Propiedad #{$id}: " . $request->mensaje;
+        if ($request->telefono) {
+            $msg .= "\nTeléfono: " . $request->telefono;
+        }
+        ContactMessage::create([
+            'name' => $request->nombre,
+            'email' => $request->email,
+            'message' => $msg,
+        ]);
+
+        return redirect()->route('properties.show', $id)
+            ->with('success', 'Mensaje enviado correctamente.');
     }
 
     private function applyAreaFilter($query, $area)

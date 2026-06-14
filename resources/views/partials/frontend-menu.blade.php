@@ -6,21 +6,21 @@
             <li class="has-children">
                 <a href="javascript:;">Arriendo</a>
                 <ul class="dropdown">
-                    <li><a href="{{ route('properties.filter') }}?t=2&p=Locales">Locales</a></li>
-                    <li><a href="{{ route('properties.filter') }}?t=2&p=Casas">Casas</a></li>
-                    <li><a href="{{ route('properties.filter') }}?t=2&p=Oficinas">Oficinas</a></li>
-                    <li><a href="{{ route('properties.filter') }}?t=2&p=Bodegas">Bodegas</a></li>
-                    <li><a href="{{ route('properties.filter') }}?t=2&p=Lotes">Lotes</a></li>
+                    <li><a href="{{ route('properties.filter') }}?tipo_oferta=2&tipo_propiedad=Locales">Locales</a></li>
+                    <li><a href="{{ route('properties.filter') }}?tipo_oferta=2&tipo_propiedad=Casas">Casas</a></li>
+                    <li><a href="{{ route('properties.filter') }}?tipo_oferta=2&tipo_propiedad=Oficinas">Oficinas</a></li>
+                    <li><a href="{{ route('properties.filter') }}?tipo_oferta=2&tipo_propiedad=Bodegas">Bodegas</a></li>
+                    <li><a href="{{ route('properties.filter') }}?tipo_oferta=2&tipo_propiedad=Lotes">Lotes</a></li>
                 </ul>
             </li>
             <li class="has-children">
                 <a href="javascript:;">Venta</a>
                 <ul class="dropdown">
-                    <li><a href="{{ route('properties.filter') }}?t=1&p=Locales">Locales</a></li>
-                    <li><a href="{{ route('properties.filter') }}?t=1&p=Casas">Casas</a></li>
-                    <li><a href="{{ route('properties.filter') }}?t=1&p=Oficinas">Oficinas</a></li>
-                    <li><a href="{{ route('properties.filter') }}?t=1&p=Bodegas">Bodegas</a></li>
-                    <li><a href="{{ route('properties.filter') }}?t=1&p=Lotes">Lotes</a></li>
+                    <li><a href="{{ route('properties.filter') }}?tipo_oferta=1&tipo_propiedad=Locales">Locales</a></li>
+                    <li><a href="{{ route('properties.filter') }}?tipo_oferta=1&tipo_propiedad=Casas">Casas</a></li>
+                    <li><a href="{{ route('properties.filter') }}?tipo_oferta=1&tipo_propiedad=Oficinas">Oficinas</a></li>
+                    <li><a href="{{ route('properties.filter') }}?tipo_oferta=1&tipo_propiedad=Bodegas">Bodegas</a></li>
+                    <li><a href="{{ route('properties.filter') }}?tipo_oferta=1&tipo_propiedad=Lotes">Lotes</a></li>
                 </ul>
             </li>
         </ul>

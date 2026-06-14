@@ -20,8 +20,20 @@ class ContactController extends Controller
             'message' => 'required|string',
         ]);
 
-        ContactMessage::create($request->only('name', 'email', 'message'));
+        $msg = $request->message;
+        if ($request->telephone) {
+            $msg .= "\nTeléfono: " . $request->telephone;
+        }
+        if ($request->subject) {
+            $msg .= "\nAsunto: " . $request->subject;
+        }
 
-        return response()->json(['message' => 'Mensaje Enviado correctamente.']);
+        ContactMessage::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $msg,
+        ]);
+
+        return redirect()->route('contact.show')->with('success', 'Mensaje enviado correctamente.');
     }
 }

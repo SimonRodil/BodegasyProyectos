@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Property;
 use App\Models\User;
 use App\Models\City;
+use App\Models\Neighborhood;
 use App\Models\BlogPost;
 
 class HomeController extends Controller
@@ -18,8 +19,9 @@ class HomeController extends Controller
 
         $advisors = User::all();
         $cities = City::all();
+        $neighborhoods = Neighborhood::all();
         $blogPosts = BlogPost::latest()->take(3)->get();
 
-        return view('home', compact('properties', 'advisors', 'cities', 'blogPosts'));
+        return view('home', compact('properties', 'advisors', 'cities', 'neighborhoods', 'blogPosts'));
     }
 }

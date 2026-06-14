@@ -86,12 +86,14 @@
         </div>
         @endif
 
+        @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
         <div class="row">
             <div class="col-md-8">
                 <h3 class="h5 mb-3">Contactar Asesor</h3>
-                <form id="contactar-asesor" method="post">
+                <form id="contactar-asesor" method="post" action="{{ route('properties.contact', $property->id) }}">
                     @csrf
-                    <input type="hidden" name="propiedad" value="{{ $property->id }}">
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <label for="nombre">Nombre</label>
@@ -132,20 +134,18 @@
         <div class="row">
             @foreach($related as $prop)
             <div class="col-md-6 col-lg-4 mb-5">
-                <div class="prop-entry d-block">
+                <a href="{{ route('properties.show', $prop->id) }}" class="prop-entry d-block">
                     <figure>
-                        <a href="{{ route('properties.show', $prop->id) }}">
-                            <img src="{{ asset('assets/images/propiedades/' . $prop->imagen_destacada) }}" alt="Image" class="img-fluid">
-                        </a>
+                        <img src="{{ asset('assets/images/propiedades/' . $prop->imagen_destacada) }}" alt="Image" class="img-fluid">
                     </figure>
                     <div class="prop-text">
                         <div class="inner">
                             <span class="price rounded">${{ $prop->precio_format }}</span>
-                            <h3 class="title"><a href="{{ route('properties.show', $prop->id) }}">{{ $prop->nombre }}</a></h3>
+                            <h3 class="title">{{ $prop->nombre }}</h3>
                             <p class="location">{{ $prop->city->nombre ?? '' }}, {{ $prop->neighborhood->nombre ?? '' }}</p>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             @endforeach
         </div>
@@ -154,6 +154,4 @@
 @endif
 @endsection
 
-@push('scripts')
-<script src="{{ asset('assets/js/contactar-asesor.js') }}"></script>
-@endpush
+

@@ -18,33 +18,42 @@
         <div class="row" id="properties-list">
             @foreach($properties as $property)
             <div class="col-md-6 col-lg-4 mb-5">
-                <div class="prop-entry d-block">
+                <a href="{{ route('properties.show', $property->id) }}" class="prop-entry d-block">
                     <figure>
-                        <a href="{{ route('properties.show', $property->id) }}">
-                            <img src="{{ asset('assets/images/propiedades/' . $property->imagen_destacada) }}" alt="Image" class="img-fluid">
-                        </a>
+                        <img src="{{ asset('assets/images/propiedades/' . $property->imagen_destacada) }}" alt="Image" class="img-fluid">
                     </figure>
                     <div class="prop-text">
                         <div class="inner">
                             <span class="price rounded">${{ $property->precio_format }}</span>
-                            <h3 class="title"><a href="{{ route('properties.show', $property->id) }}">{{ $property->nombre }}</a></h3>
+                            <h3 class="title">{{ $property->nombre }}</h3>
                             <p class="location">{{ $property->city->nombre ?? '' }}, {{ $property->neighborhood->nombre ?? '' }}</p>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             @endforeach
         </div>
         <div class="row mt-3">
             <div class="col-lg-12 text-center">
-                {{ $total }} resultados encontrados - Página {{ $pagina }}
+                {{ $total }} resultados encontrados - Página {{ $pagina }} de {{ $totalPages }}
             </div>
         </div>
+        @if($totalPages > 1)
+        <div class="row mt-3">
+            <div class="col-lg-12 text-center">
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        @for($i = 1; $i <= $totalPages; $i++)
+                        <li class="page-item {{ $i == $pagina ? 'active' : '' }}">
+                            <a class="page-link" href="{{ route('properties.filter', array_merge(request()->query(), ['pagina' => $i])) }}">{{ $i }}</a>
+                        </li>
+                        @endfor
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        @endif
         @endif
     </div>
 </div>
 @endsection
-
-@push('scripts')
-@vite(['resources/js/filtrar-propiedades.js'])
-@endpush

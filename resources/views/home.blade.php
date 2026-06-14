@@ -13,15 +13,14 @@
 
 <div class="py-5" id="filter-div">
     <div class="container">
-        <form class="row" id="main-filter" action="{{ route('properties.filter') }}" method="POST">
-            @csrf
+        <form class="row" id="main-filter" action="{{ route('properties.filter') }}" method="GET">
             <div class="col-lg-12 text-center mb-4 site-section-title" data-aos="fade">
                 <h2>¡Empecemos a buscar!</h2>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="select-wrap">
                     <span class="icon icon-arrow_drop_down"></span>
-                    <select name="tipo_oferta" class="form-control d-block rounded-0" required>
+                    <select name="tipo_oferta" class="form-control d-block rounded-0" chosen="-" required>
                         <option value="-" selected>Tipo de Oferta</option>
                         <option value="2">Arriendo</option>
                         <option value="1">Venta</option>
@@ -31,7 +30,7 @@
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="select-wrap">
                     <span class="icon icon-arrow_drop_down"></span>
-                    <select name="tipo_propiedad" class="form-control d-block rounded-0">
+                    <select name="tipo_propiedad" class="form-control d-block rounded-0" chosen="-">
                         <option value="-" selected>Tipo de Propiedad</option>
                         <option>Bodegas</option>
                         <option>Oficinas</option>
@@ -46,7 +45,7 @@
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="select-wrap">
                     <span class="icon icon-arrow_drop_down"></span>
-                    <select name="ciudad" class="form-control d-block rounded-0">
+                    <select name="ciudad" class="form-control d-block rounded-0" chosen="-">
                         <option value="-" selected>Ciudad</option>
                         @foreach($cities as $city)
                         <option value="{{ $city->id }}">{{ $city->nombre }}</option>
@@ -57,15 +56,18 @@
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
                 <div class="select-wrap">
                     <span class="icon icon-arrow_drop_down"></span>
-                    <select name="barrio" class="form-control d-block rounded-0">
+                    <select name="barrio" class="form-control d-block rounded-0" chosen="-">
                         <option value="-" selected>Barrio</option>
+                        @foreach($neighborhoods as $n)
+                        <option value="{{ $n->id }}">{{ $n->nombre }} ({{ $n->city->nombre ?? '' }})</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="500">
                 <div class="select-wrap">
                     <span class="icon icon-arrow_drop_down"></span>
-                    <select name="area" class="form-control d-block rounded-0">
+                    <select name="area" class="form-control d-block rounded-0" chosen="-">
                         <option value="-" selected>Área (m2)</option>
                         <option value="-50">Menos de 50mts</option>
                         <option value="50-100">De 50 a 100mts</option>
@@ -80,7 +82,7 @@
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="600">
                 <div class="select-wrap">
                     <span class="icon icon-arrow_drop_down"></span>
-                    <select name="precio" class="form-control d-block rounded-0">
+                    <select name="precio" class="form-control d-block rounded-0" chosen="-">
                         <option value="-">Todos los precios</option>
                         <option value="0-1">Entre $0 y $1 millón</option>
                         <option value="1-2">Entre $1 y $2 millones</option>
@@ -123,7 +125,7 @@
         <div class="propiedades row">
             @foreach($properties as $property)
             <div class="slide-one-item">
-                <div class="prop-entry d-block">
+                <a href="{{ route('properties.show', $property->id) }}" class="prop-entry d-block">
                     <figure>
                         <img src="{{ asset('assets/images/propiedades/' . $property->imagen_destacada) }}" alt="Image" class="img-fluid">
                     </figure>
@@ -139,13 +141,13 @@
                                     <span>Área:</span>
                                     <strong>{{ $property->area }}m<sup>2</sup></strong>
                                 </div>
-                                <div class="col">
-                                    <a href="{{ route('properties.show', $property->id) }}" class="btn btn-primary btn-sm rounded-0"><span class="icon-search"></span></a>
+                                <div class="col text-right">
+                                    <span class="btn btn-primary btn-sm rounded-0"><span class="icon-search"></span></span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             @endforeach
         </div>

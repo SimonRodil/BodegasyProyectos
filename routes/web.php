@@ -17,6 +17,7 @@ Route::get('/contacto', [ContactController::class, 'show'])->name('contact.show'
 Route::post('/contacto/enviar', [ContactController::class, 'send'])->name('contact.send');
 Route::get('/propiedades', [PropertyController::class, 'index'])->name('properties.index');
 Route::get('/propiedades/{id}', [PropertyController::class, 'show'])->name('properties.show');
+Route::post('/propiedades/{id}/contactar', [PropertyController::class, 'contactAdvisor'])->name('properties.contact');
 Route::match(['get', 'post'], '/filtrar-propiedades', [PropertyController::class, 'filter'])->name('properties.filter');
 Route::get('/ficha-tecnica/{id}', [FichaTecnicaController::class, 'download'])->name('properties.pdf');
 

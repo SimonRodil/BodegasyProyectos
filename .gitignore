@@ -16,6 +16,8 @@
 !storage/logs/.gitkeep
 !storage/app/public/.gitkeep
 
+/public/build
+
 # Old project files (gitignored previously)
 mod/config.php
 .htaccess
