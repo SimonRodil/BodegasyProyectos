@@ -1,20 +1,18 @@
-@extends('layouts.admin')
+@extends('layouts.admin-lte')
 @section('page-title', 'Blog')
 @section('content')
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header card-header-primary d-flex justify-content-between">
-                <h4 class="card-title">Blog</h4>
-                <button class="btn btn-white btn-sm" data-toggle="modal" data-target="#nuevo-registro"><i class="material-icons">add</i> Nuevo</button>
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h3 class="card-title">Blog</h3>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#nuevo-registro"><i class="fas fa-plus"></i> Nuevo</button>
             </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table" id="blog-table">
-                        <thead><tr><th>Título</th><th>Fecha</th><th>Acciones</th></tr></thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
+            <div class="card-body p-0">
+                <table class="table table-striped" id="blog-table">
+                    <thead><tr><th>Título</th><th>Fecha</th><th>Acciones</th></tr></thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
     </div>

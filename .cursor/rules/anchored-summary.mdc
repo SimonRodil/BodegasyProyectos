@@ -1,0 +1,124 @@
+---
+description: Anchored summary of the project state for BodegasyProyectos
+globs: 
+---
+## Goal
+- Migrar sistema inmobiliario PHP legacy a Laravel 11 con assets gestionados vía npm + Vite, eliminar dependencias JS críticas moviendo funcionalidad a PHP/HTML nativo, y reemplazar el panel admin legacy (Material Dashboard) con AdminLTE v3.
+
+## Constraints & Preferences
+- Mantener apariencia visual del frontend original.
+- Assets JS/CSS vía npm, no locales.
+- Rama `ReworkLaravel`.
+- Auth híbrida compatible con hashes legacy.
+- Funcionalidades vitales (navegación, paginación, envío de formularios) deben funcionar sin JavaScript.
+- Todo lo que pueda hacerse nativamente (PHP/Blade) debe priorizarse sobre JS.
+- `public/build/` no se sube a git (agregado a `.gitignore`).
+
+## Progress
+### Done
+- Análisis completo del codebase original (10 frontend PHP, 9 mod/, 45 dri/, 9 panel/, 11+ tablas DB).
+- Instalado Laravel 11 con PHP 8.5.7, assets movidos a `public/assets/`.
+- 13 migraciones creadas y ejecutadas exitosamente.
+- 11 modelos Eloquent, 20 controladores, ~30 vistas Blade.
+- Middleware `AdminAuth` personalizado, auth híbrida (Laravel Hash + legacy).
+- Rutas frontend (10), admin (~30), API (4).
+- mpdf v8.3 para PDF de ficha técnica.
+- Seeder admin (`admin` / `admin123`) + seed personal vía vars `ADMIN_*` en `.env`.
+- Archivos legacy eliminados: `mod/`, `dri/`, `panel/`, `structure/`, `assets/`, 10 PHP raíz.
+- README.md y .env.example actualizados.
+- Vite configurado con 7 entry points.
+- Layouts actualizados a Vite ES modules; todos los `<script defer>` eliminados.
+- Login page migrada a Vite (`login.js`).
+- Expuestos `window.AOS`, `window.Swal`, `window.moment` en entry points.
+- Wrappers para plugins legacy (stellar, floating-wpp) con `?raw` + `new Function`.
+- Code splitting: `jquery-ui` y `bootstrap-datepicker` con `import()` dinámico.
+- Filtro corregido: `$filters` pasado al partial con `@selected`.
+- URLs AJAX actualizadas: `/dri/barrios/` → `/api/barrios/{id}`, `/dri/propiedades/filtro-json` → `/api/filtrar-propiedades`.
+- Agregados `$appends` al modelo Property.
+- Creados seeders: CitySeeder, NeighborhoodSeeder, PropertySeeder + 5 imágenes placeholder Unsplash.
+- Restaurado carrusel Owl Carousel en homepage con 3 slides responsive.
+- Corregidos errores jQuery 3+ (selectores sin comillas, `.unbind()`, `complete:`/`success:`, stellar init).
+- AOS: movido a DOM ready con `once: true`, `mirror: false`, `refreshHard()` tras 300ms.
+- Animaciones CTA: `data-aos="fade-up"` con delays escalonados agregados a secciones `bg-primary`.
+- Bug `chosen` corregido: atributo `chosen="{{ $filters['...'] ?? '-' }}"` en todos los `<select>`; JS con guard `$value !== undefined`.
+- **Links de propiedades nativos**: `.prop-entry` convertido de `<div>` con JS click a `<a href="{{ route('properties.show', $property->id) }}" class="prop-entry d-block">` en home, index, filter, show (related).
+- **Paginación nativa**: formulario de filtro cambiado de POST a GET; `@csrf` eliminado; barrios pre-poblados; controladores pasan `$neighborhoods`; `$totalPages` calculado en `PropertyController@filter`; paginación AJAX eliminada de `filtrar-propiedades.js`.
+- **Contactar Asesor funcional sin JS**: nueva ruta `POST /propiedades/{id}/contactar` + método `PropertyController@contactAdvisor` + redirect con `session('success')` + legacy `contactar-asesor.js` eliminado.
+- **Contacto funcional sin JS**: form action → `route('contact.send')`; `ContactController@send` cambió de JSON a redirect; legacy `contact.js` eliminado.
+- **Public/build ignorado de git**: `.gitignore` incluye `/public/build`; 19 archivos trackeados removidos con `git rm --cached`.
+- **Dependencias no utilizadas eliminadas**:
+  - npm: `mediaelement`, `tailwindcss`, `@tailwindcss/vite` (borrados de `package.json`)
+  - CSS: `@import 'mediaelement/build/mediaelementplayer.min.css'` (frontend.css), `@import 'materialize-css/dist/css/materialize.min.css'` (admin.css)
+  - vite.config.js: imports muertos de `bunny` y `tailwindcss` eliminados
+  - composer: `mockery/mockery` removido
+  - admin.css bajó de 172.89 kB a 51.08 kB; frontend.css de 256.28 kB a 245.72 kB
+- **AdminLTE v3 instalado**: `jeroennoten/laravel-adminlte` vía composer, configurado en `config/adminlte.php` con menú, branding y skin acordes al proyecto.
+- **Wrapper layout admin-lte creado**: `resources/views/layouts/admin-lte.blade.php` extiende `adminlte::page` e incluye Vite, favicon, AdminLTE JS/CSS, y cola `__adminReady` antes del stack.
+- **Vistas admin migradas a AdminLTE**: dashboard, properties/index, cities/index, blog/index, contact/index, inquiries/index, profile, reports, users/index — todas extienden `layouts.admin-lte` y usan componentes AdminLTE (small-box, card, table, modal).
+- **Login page migrada a AdminLTE auth**: usa `adminlte::auth.auth-page` con layout responsivo, íconos FontAwesome, y formulario nativo (POST, sin AJAX).
+- **AuthController con redirect**: login ahora soporta tanto JSON (legacy) como redirect (nativo).
+- **CSS/JS de AdminLTE cargado desde vendor**: FontAwesome, overlayScrollbars, adminlte.min.css/js desde `public/vendor/` mediante `adminlte_css_pre`/`adminlte_js` en el layout.
+- `npm run build` exitoso.
+
+### In Progress
+- (ninguno)
+
+### Blocked
+- (none)
+
+## Key Decisions
+- Formulario de filtro cambiado a GET para que la paginación funcione sin JS y las URLs sean bookmarkeables.
+- Barrios pre-poblados con `@foreach($neighborhoods as $n)` en lugar de carga AJAX por ciudad.
+- Links de propiedades nativos con `<a>` en lugar de `data-id` + JS `clickPropiedades()`.
+- Contactar Asesor y formulario de contacto migrados a POST con redirect (sin AJAX/Swal dependency).
+- `public/build/` ignorado de git → build se corre en deploy, no se commitea.
+- **Admin panel migrado a AdminLTE v3** porque el Material Dashboard legacy dependía de `bootstrap-material-design.min.js` + CSS duplicado + archivos `public/assets/panel/`. AdminLTE usa Bootstrap 4.x (mismo stack), es mantenido activamente, y tiene integración Blade nativa vía `jeroennoten/laravel-adminlte`.
+- `materialize-css` eliminado de admin.css tras verificar que Material Dashboard v2.1.0 no depende de él.
+- `adminlte.min.js` cargado con `defer` para que jQuery de admin.js (Vite module, también deferred) esté disponible.
+- `__adminReady` definido antes del stack de scripts para evitar errores de referencia.
+- AdminLTE CSS/JS cargado desde `public/vendor/` (publicado por `adminlte:install`) como `<link>` y `<script>` estáticos, ya que AdminLTE v3 no está como npm package.
+
+## Next Steps
+1. Probar login y dashboard migrados
+2. Migrar formularios restantes (propiedades create/edit, usuarios, blog) que usan modals legacy
+3. Simplificar admin.css y admin.js (eliminar CSS/JS duplicado de Bootstrap, plugins innecesarios)
+4. Eliminar legacy `public/assets/panel/` y `layouts/admin.blade.php` una vez todo funcione
+5. `npm run build` + verificar funcionamiento completo del admin
+
+## Critical Context
+- La paginación ahora es nativa: `/filtrar-propiedades?tipo_oferta=1&ciudad=3&pagina=2` funciona sin JS.
+- `adminlte.php` configurado con `laravel_asset_bundling => 'vite'` y rutas de CSS/JS correctas.
+- AdminLTE CSS/JS se sirve desde `public/vendor/` (fontawesome-free, overlayScrollbars, adminlte, jquery, bootstrap, popper).
+- El admin legacy (Material Dashboard) sigue funcionando temporalmente con `layouts/admin.blade.php` — se reemplazará progresivamente por `layouts/admin-lte.blade.php`.
+- `__adminReady` cola se mantiene para compatibilidad con scripts inline de vistas admin migradas.
+- AdminLTE JS requiere jQuery global (proporcionado por admin.js Vite module, con carga deferred).
+- `npm run build` compila exitosamente (sin errores).
+- Para recargar usuario: `php artisan db:seed --class=UserSeeder` + `AdminSeeder`.
+
+## Relevant Files
+- `config/adminlte.php`: configuración completa de AdminLTE (menú, skin, branding, plugins desactivados, Vite).
+- `resources/views/layouts/admin-lte.blade.php`: wrapper layout que extiende `adminlte::page` con Vite, __adminReady, CSS/JS de vendor.
+- `resources/views/layouts/admin.blade.php`: layout legacy (Material Dashboard) — será eliminado.
+- `resources/views/admin/login.blade.php`: login con AdminLTE auth layout, form nativo POST.
+- `resources/views/admin/dashboard.blade.php`: dashboard migrado con small-boxes y tablas.
+- `resources/views/admin/properties/index.blade.php`: propiedades con DataTable y modals.
+- `resources/views/admin/cities/index.blade.php`: ciudades y barrios con formularios modales.
+- `resources/views/admin/blog/index.blade.php`: blog con summernote.
+- `resources/views/admin/contact/index.blade.php`: contacto con reply via Swal.
+- `resources/views/admin/inquiries/index.blade.php`: mensajes.
+- `resources/views/admin/profile.blade.php`: perfil con croppie.
+- `resources/views/admin/reports.blade.php`: reportes (tabla simple).
+- `resources/views/admin/users/index.blade.php`: usuarios.
+- `app/Http/Controllers/Admin/AuthController.php`: soporta JSON + redirect.
+- `resources/js/main.js`: AOS init, carrusel, menú mobile, stellar, countdown, slider, datepicker, WhatsApp.
+- `resources/js/filtrar-propiedades.js`: solo restaura valores `chosen`.
+- `resources/js/admin.js`: jQuery, Bootstrap, select2, datatables, summernote, croppie, Swal.
+- `resources/css/admin.css`: imports de select2, bootstrap-select, croppie, datatables, jquery-steps.
+- `resources/views/partials/filter-form.blade.php`: method="GET", barrios pre-poblados.
+- `resources/views/home.blade.php`: form inline method="GET", prop-entry es `<a>`.
+- `resources/views/properties/filter.blade.php`: paginación nativa con `<ul class="pagination">`.
+- `resources/views/properties/show.blade.php`: form Contactar Asesor POST + session('success').
+- `app/Http/Controllers/PropertyController.php`: filter() GET/POST, contactAdvisor().
+- `app/Http/Controllers/ContactController.php`: send() redirect en vez de JSON.
+- `routes/web.php` + `routes/admin.php`: todas las rutas.
+- `public/vendor/adminlte/`: assets publicados de AdminLTE (CSS/JS/fonts).

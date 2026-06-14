@@ -48,4 +48,19 @@ class User extends Authenticatable
     {
         return $this->id === 1;
     }
+
+    public function adminlte_profile_url()
+    {
+        return route('admin.perfil.edit');
+    }
+
+    public function adminlte_image()
+    {
+        return asset('assets/images/profile_pictures/' . ($this->profile_pic ?: 'default.jpg'));
+    }
+
+    public function adminlte_desc()
+    {
+        return $this->rank > 1 ? 'Asesor Ejecutivo' : 'Asesor';
+    }
 }

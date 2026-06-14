@@ -53,7 +53,11 @@ class AuthController extends Controller
             cookie()->queue('sert_session', $user->username, 60 * 24 * 365);
         }
 
-        return response()->json(['message' => 'success']);
+        if ($request->wantsJson()) {
+            return response()->json(['message' => 'success']);
+        }
+
+        return redirect()->route('admin.dashboard');
     }
 
     public function logout()

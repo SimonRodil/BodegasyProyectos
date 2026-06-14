@@ -1,10 +1,13 @@
-@extends('layouts.admin')
+@extends('layouts.admin-lte')
 @section('page-title', 'Perfil')
+@section('content_header_extra')
+<a href="{{ route('home') }}" class="btn btn-outline-primary btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Sitio</a>
+@stop
 @section('content')
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header card-header-primary"><h4 class="card-title">Mi Perfil</h4></div>
+            <div class="card-header"><h3 class="card-title">Mi Perfil</h3></div>
             <div class="card-body">
                 <div class="row mb-4">
                     <div class="col-md-2 text-center">

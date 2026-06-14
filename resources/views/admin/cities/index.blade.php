@@ -1,36 +1,32 @@
-@extends('layouts.admin')
+@extends('layouts.admin-lte')
 @section('page-title', 'Ciudades y Barrios')
 @section('content')
 <div class="row">
     <div class="col-md-6">
         <div class="card">
-            <div class="card-header card-header-primary d-flex justify-content-between">
-                <h4 class="card-title">Ciudades</h4>
-                <button class="btn btn-white btn-sm" data-toggle="modal" data-target="#nueva-ciudad"><i class="material-icons">add</i> Nueva</button>
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h3 class="card-title">Ciudades</h3>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#nueva-ciudad"><i class="fas fa-plus"></i> Nueva</button>
             </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table" id="ciudades-table">
-                        <thead><tr><th>Nombre</th><th>Acciones</th></tr></thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
+            <div class="card-body p-0">
+                <table class="table table-striped" id="ciudades-table">
+                    <thead><tr><th>Nombre</th><th>Acciones</th></tr></thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
     </div>
     <div class="col-md-6">
         <div class="card">
-            <div class="card-header card-header-primary d-flex justify-content-between">
-                <h4 class="card-title">Barrios</h4>
-                <button class="btn btn-white btn-sm" data-toggle="modal" data-target="#nuevo-barrio"><i class="material-icons">add</i> Nuevo</button>
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h3 class="card-title">Barrios</h3>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#nuevo-barrio"><i class="fas fa-plus"></i> Nuevo</button>
             </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table" id="barrios-table">
-                        <thead><tr><th>Nombre</th><th>Ciudad</th><th>Acciones</th></tr></thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
+            <div class="card-body p-0">
+                <table class="table table-striped" id="barrios-table">
+                    <thead><tr><th>Nombre</th><th>Ciudad</th><th>Acciones</th></tr></thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
     </div>

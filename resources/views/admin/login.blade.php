@@ -1,72 +1,60 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Iniciar Sesión - Panel</title>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    @vite(['resources/js/login.js'])
-    <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
-    <link rel="stylesheet" href="{{ asset('assets/panel/login/libs/mdl/material.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/panel/login/css/style.css') }}">
-    <script>window.__adminReady=function(fn){if(window.jQuery)jQuery(fn);else{(window.__adminQueue=window.__adminQueue||[]).push(fn);}};</script>
-</head>
-<body>
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--2-offset-desktop mdl-cell--4-col-tablet mdl-cell--1-offset-tablet mdl-cell--4-col-phone">
-            <div class="mdl-card mdl-shadow--16dp">
-                <div class="mdl-card__title">
-                    <img src="{{ asset('assets/images/logo.png') }}" class="img-fluid" style="width: 100%;">
+@extends('adminlte::auth.auth-page', ['authType' => 'login'])
+
+@section('adminlte_css_pre')
+    <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/adminlte.min.css') }}">
+@stop
+
+@section('auth_header', 'Iniciar Sesión')
+
+@section('auth_body')
+    <form action="{{ route('admin.login.post') }}" method="post">
+        @csrf
+
+        <div class="input-group mb-3">
+            <input type="text" name="username" class="form-control @error('error') is-invalid @enderror"
+                value="{{ old('username') }}" placeholder="Usuario / Correo Electrónico" autofocus>
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
                 </div>
-                <div class="mdl-card__supporting-text">
-                    <form id="form-login" method="post">
-                        @csrf
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" name="username" id="username" required>
-                            <label class="mdl-textfield__label" for="username">Usuario / Correo Electrónico</label>
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="password" name="password" id="password" required>
-                            <label class="mdl-textfield__label" for="password">Contraseña</label>
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember">
-                                <input type="checkbox" name="remember" id="remember" class="mdl-checkbox__input">
-                                <span class="mdl-checkbox__label">Recordar Contraseña</span>
-                            </label>
-                        </div>
-                        <p class="text-center">
-                            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="ingresar">
-                                Ingresar
-                            </button>
-                        </p>
-                    </form>
+            </div>
+            @error('error')
+                <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+            @enderror
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="password" name="password" class="form-control @error('error') is-invalid @enderror"
+                placeholder="Contraseña">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script defer src="{{ asset('assets/panel/login/libs/mdl/material.min.js') }}"></script>
-    <script>
-        __adminReady(function() {
-            $('#form-login').on('submit', function(e) {
-                e.preventDefault();
-                $.ajax({
-                    url: '{{ route("admin.login.post") }}',
-                    method: 'POST',
-                    data: $(this).serialize(),
-                    dataType: 'json',
-                    success: function(r) {
-                        if (r.message === 'success') {
-                            Swal.fire({ icon: 'success', title: 'Bienvenido!', showConfirmButton: false, timer: 1500 });
-                            setTimeout(function() { window.location.href = '{{ route("admin.dashboard") }}'; }, 1500);
-                        }
-                    },
-                    error: function() {
-                        Swal.fire({ icon: 'error', title: 'Error', text: 'Usuario o contraseña incorrectos' });
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+        <div class="row">
+            <div class="col-7">
+                <div class="icheck-primary">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Recordar Contraseña</label>
+                </div>
+            </div>
+            <div class="col-5">
+                <button type="submit" class="btn btn-block btn-flat btn-primary">
+                    <span class="fas fa-sign-in-alt"></span> Ingresar
+                </button>
+            </div>
+        </div>
+    </form>
+@stop
+
+@section('auth_footer')
+    <p class="my-0"><a href="{{ route('home') }}">Volver al sitio</a></p>
+@stop
+
+@section('adminlte_js')
+    <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}" defer></script>
+@stop
