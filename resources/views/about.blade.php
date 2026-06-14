@@ -47,11 +47,11 @@
 <div class="site-section site-section-sm bg-primary" style="background-image: url({{ asset('assets/images/bg_opacity.png') }})">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-8">
+            <div class="col-md-8" data-aos="fade-up">
                 <h2 class="text-white">Amplia Gama de Propiedades solo para tí</h2>
                 <p class="lead text-white">Estás en el sitio web donde podrás encontrar lo que estás buscando, tenemos todo en locales, bodegas, oficinas y más.</p>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="300">
                 <a href="{{ route('properties.index') }}" class="btn btn-outline-primary btn-block py-3 btn-lg">Empecemos a Buscar <i class="icon-search"></i></a>
             </div>
         </div>

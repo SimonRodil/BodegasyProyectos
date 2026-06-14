@@ -2,13 +2,6 @@ import $ from 'jquery';
 import Swal from 'sweetalert2';
 import AOS from 'aos';
 
-AOS.init({
-  disable: 'phone',
-  duration: 800,
-  easing: 'slide',
-  anchorPlacement: 'top-bottom'
-});
-
 window.clickPropiedades = function() {
   $('.propiedades .prop-entry').css('cursor', 'pointer').click(function(){
     var $id = $(this).find('[data-id]').attr('data-id');
@@ -18,6 +11,15 @@ window.clickPropiedades = function() {
 
 $(function() {
   "use strict";
+
+  AOS.init({
+    disable: 'phone',
+    duration: 800,
+    easing: 'slide',
+    once: true,
+    mirror: false
+  });
+  setTimeout(function() { AOS.refreshHard(); }, 300);
 
   var loaderPage = function() {
     $(".site-loader").fadeOut("slow");
@@ -212,14 +214,16 @@ $(function() {
   siteCarousel();
 
   var siteStellar = function() {
-    $(window).stellar({
-      responsive: false,
-      parallaxBackgrounds: true,
-      parallaxElements: true,
-      horizontalScrolling: false,
-      hideDistantElements: false,
-      scrollProperty: 'scroll'
-    });
+    if (typeof $.stellar !== 'undefined' && $.stellar.init) {
+      $.stellar.init({
+        responsive: false,
+        parallaxBackgrounds: true,
+        parallaxElements: true,
+        horizontalScrolling: false,
+        hideDistantElements: false,
+        scrollProperty: 'scroll'
+      });
+    }
   };
   siteStellar();
 
@@ -245,7 +249,7 @@ $(function() {
   };
   siteDatePicker();
 
-  $('a[href=#]').click(function(){
+  $('a[href="#"]').click(function(){
     Swal.fire(
       'Estamos trabajando...',
       'Aún nos encontramos trabajando en esta área. 😅',
@@ -257,7 +261,7 @@ $(function() {
     e.preventDefault();
     var $filterForm = $(this);
 
-    if($filterForm.find('[name=tipo_oferta]').val() == '-' && $filterForm.find('[name=codigo]').val() == '') {
+    if($filterForm.find('[name="tipo_oferta"]').val() == '-' && $filterForm.find('[name="codigo"]').val() == '') {
       Swal.fire(
         'Hay un error al Buscar',
         'Debes seleccionar una de las opciones de Arrienda o Venta',
@@ -266,38 +270,36 @@ $(function() {
       return;
     }
 
-    $(this).unbind('submit').submit();
+    $(this).off('submit').submit();
   });
 });
 
-$('[name=ciudad]').change(function(){
+$('[name="ciudad"]').change(function(){
   var $form = $(this).closest('form');
-  var $selBarrio = $form.find('[name=barrio]');
+  var $selBarrio = $form.find('[name="barrio"]');
   var $ciudad = $(this).val();
 
   if($ciudad != null) {
     $.ajax({
       beforeSend: function() { $selBarrio.empty(); },
       url: '/api/barrios/' + $ciudad,
-      method: 'GET',
-      complete: function(data) {
-        $selBarrio.append("<option value='-'>Barrio</option>");
-        $.each(data.responseJSON, function(index, value){
-          $selBarrio.append("<option value='" + value.id + "'>" + value.nombre + "</option>");
-        });
-        return;
-      }
+      method: 'GET'
+    }).done(function(data) {
+      $selBarrio.append("<option value='-'>Barrio</option>");
+      $.each(data, function(index, value){
+        $selBarrio.append("<option value='" + value.id + "'>" + value.nombre + "</option>");
+      });
     });
   }
 });
 
-$('[name=codigo]').on('focus',function(){
+$('[name="codigo"]').on('focus',function(){
   $('select').css('opacity', '0.5');
 }, function(){
   $('select').css('opacity', 1);
 });
 
-$('[name=codigo]').on('keyup', function(){
+$('[name="codigo"]').on('keyup', function(){
   if($(this).val() != '') {
     $('select').parent().parent().slideUp();
   } else {

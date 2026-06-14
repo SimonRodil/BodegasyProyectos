@@ -20,3 +20,4 @@
 mod/config.php
 .htaccess
 panel/.htaccess
+public/hot
