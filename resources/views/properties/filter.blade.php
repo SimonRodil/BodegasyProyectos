@@ -13,7 +13,7 @@
 
 <div class="site-section">
     <div class="container">
-        @include('partials.filter-form', ['cities' => $cities])
+        @include('partials.filter-form', ['cities' => $cities, 'filters' => $filters ?? []])
         @if(count($properties))
         <div class="row" id="properties-list">
             @foreach($properties as $property)
@@ -46,5 +46,5 @@
 @endsection
 
 @push('scripts')
-<script defer src="{{ asset('assets/js/filtrar-propiedades.js') }}"></script>
+@vite(['resources/js/filtrar-propiedades.js'])
 @endpush

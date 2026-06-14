@@ -1,1 +1,0 @@
-import{c as e,t}from"./sweetalert2.all-Dw9FGx85.js";var n=e(t(),1);window.Swal=n.default;

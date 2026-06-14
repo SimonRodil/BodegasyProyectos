@@ -140,7 +140,7 @@
                                     <strong>{{ $property->area }}m<sup>2</sup></strong>
                                 </div>
                                 <div class="col">
-                                    <span><a href="{{ route('properties.show', $property->id) }}" class="btn btn-white btn-sm btn-block rounded-0 color-primary"><span class="icon-search"></span></a></span>
+                                    <a href="{{ route('properties.show', $property->id) }}" class="btn btn-primary btn-sm rounded-0"><span class="icon-search"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -201,5 +201,5 @@
 @endsection
 
 @push('scripts')
-<script defer src="{{ asset('assets/js/filtrar-propiedades.js') }}"></script>
+@vite(['resources/js/filtrar-propiedades.js'])
 @endpush

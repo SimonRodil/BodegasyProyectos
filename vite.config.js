@@ -12,6 +12,7 @@ export default defineConfig({
                 'resources/js/frontend.js',
                 'resources/js/admin.js',
                 'resources/js/login.js',
+                'resources/js/filtrar-propiedades.js',
             ],
             refresh: true,
         }),

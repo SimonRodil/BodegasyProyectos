@@ -1,0 +1,1 @@
+import{s as e}from"./jquery-CQ5NoRPr.js";import{t}from"./sweetalert2.all-CQwtFnl9.js";var n=e(t(),1);window.Swal=n.default;

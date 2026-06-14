@@ -14,7 +14,7 @@
 @if(count($properties))
 <div class="site-section">
     <div class="container">
-        @include('partials.filter-form', ['cities' => $cities])
+        @include('partials.filter-form', ['cities' => $cities, 'filters' => $filters ?? []])
         <div class="row">
             @foreach($properties as $property)
             <div class="col-md-6 col-lg-4 mb-5">
@@ -36,8 +36,8 @@
                                     <span>Área:</span>
                                     <strong>{{ $property->area }}m<sup>2</sup></strong>
                                 </div>
-                                <div class="col">
-                                    <span><a href="{{ route('properties.show', $property->id) }}" class="btn btn-white btn-sm btn-block rounded-0 color-primary"><span class="icon-search"></span></a></span>
+                                <div class="col text-right">
+                                    <a href="{{ route('properties.show', $property->id) }}" class="btn btn-primary btn-sm rounded-0"><span class="icon-search"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -52,5 +52,5 @@
 @endsection
 
 @push('scripts')
-<script defer src="{{ asset('assets/js/filtrar-propiedades.js') }}"></script>
+@vite(['resources/js/filtrar-propiedades.js'])
 @endpush

@@ -143,9 +143,6 @@
     </footer>
 
     <div class="wpp-plugin"></div>
-    <script defer src="{{ asset('assets/js/jquery.stellar.min.js') }}"></script>
-    <script defer src="{{ asset('assets/libs/floating-wpp.js') }}"></script>
-    <script defer src="{{ asset('assets/js/main.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

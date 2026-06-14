@@ -31,24 +31,26 @@ class PropertyController extends Controller
     {
         $query = Property::with(['city', 'neighborhood']);
 
-        if ($tipo_oferta = request('tipo_oferta')) {
+        $filters = request()->only(['tipo_oferta', 'tipo_propiedad', 'ciudad', 'barrio', 'area', 'precio', 'codigo']);
+
+        if ($tipo_oferta = $filters['tipo_oferta'] ?? null) {
             $query->where('tipo_oferta', $tipo_oferta);
         }
-        if ($tipo_propiedad = request('tipo_propiedad')) {
+        if ($tipo_propiedad = $filters['tipo_propiedad'] ?? null) {
             $query->where('tipo_propiedad', $tipo_propiedad);
         }
-        if ($ciudad = request('ciudad')) {
+        if ($ciudad = $filters['ciudad'] ?? null) {
             $query->where('ciudad', $ciudad);
         }
-        if ($barrio = request('barrio')) {
+        if ($barrio = $filters['barrio'] ?? null) {
             $query->where('barrio', $barrio);
         }
-        if ($codigo = request('codigo')) {
+        if ($codigo = $filters['codigo'] ?? null) {
             $query->where('id', $codigo);
         }
 
-        $this->applyAreaFilter($query, request('area'));
-        $this->applyPriceFilter($query, request('precio'));
+        $this->applyAreaFilter($query, $filters['area'] ?? null);
+        $this->applyPriceFilter($query, $filters['precio'] ?? null);
 
         $pagina = max(1, (int) request('pagina', 1));
         $perPage = 6;
@@ -61,7 +63,7 @@ class PropertyController extends Controller
             return response()->json($properties);
         }
 
-        return view('properties.filter', compact('properties', 'cities', 'total', 'pagina', 'perPage'));
+        return view('properties.filter', compact('properties', 'cities', 'total', 'pagina', 'perPage', 'filters'));
     }
 
     private function applyAreaFilter($query, $area)
