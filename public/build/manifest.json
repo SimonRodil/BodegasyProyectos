@@ -1,0 +1,63 @@
+{
+  "node_modules/jquery-ui-dist/images/ui-icons_444444_256x240.png": {
+    "file": "assets/ui-icons_444444_256x240-BHnP2aHg.png",
+    "src": "node_modules/jquery-ui-dist/images/ui-icons_444444_256x240.png"
+  },
+  "node_modules/jquery-ui-dist/images/ui-icons_555555_256x240.png": {
+    "file": "assets/ui-icons_555555_256x240-BY9OMAGw.png",
+    "src": "node_modules/jquery-ui-dist/images/ui-icons_555555_256x240.png"
+  },
+  "node_modules/jquery-ui-dist/images/ui-icons_777620_256x240.png": {
+    "file": "assets/ui-icons_777620_256x240-XyU4YhvJ.png",
+    "src": "node_modules/jquery-ui-dist/images/ui-icons_777620_256x240.png"
+  },
+  "node_modules/jquery-ui-dist/images/ui-icons_777777_256x240.png": {
+    "file": "assets/ui-icons_777777_256x240-D68C7QWK.png",
+    "src": "node_modules/jquery-ui-dist/images/ui-icons_777777_256x240.png"
+  },
+  "node_modules/jquery-ui-dist/images/ui-icons_cc0000_256x240.png": {
+    "file": "assets/ui-icons_cc0000_256x240-DFAnpvzo.png",
+    "src": "node_modules/jquery-ui-dist/images/ui-icons_cc0000_256x240.png"
+  },
+  "node_modules/jquery-ui-dist/images/ui-icons_ffffff_256x240.png": {
+    "file": "assets/ui-icons_ffffff_256x240-Dw-ZeEXm.png",
+    "src": "node_modules/jquery-ui-dist/images/ui-icons_ffffff_256x240.png"
+  },
+  "node_modules/owl.carousel/dist/assets/owl.video.play.png": {
+    "file": "assets/owl.video.play-BJo37keB.png",
+    "src": "node_modules/owl.carousel/dist/assets/owl.video.play.png"
+  },
+  "resources/css/admin.css": {
+    "file": "assets/admin-CaJjkjia.css",
+    "name": "admin",
+    "names": [
+      "admin.css"
+    ],
+    "src": "resources/css/admin.css",
+    "isEntry": true
+  },
+  "resources/css/frontend.css": {
+    "file": "assets/frontend-CCkGoe5s.css",
+    "name": "frontend",
+    "names": [
+      "frontend.css"
+    ],
+    "src": "resources/css/frontend.css",
+    "isEntry": true,
+    "assets": [
+      "assets/owl.video.play-BJo37keB.png",
+      "assets/ui-icons_444444_256x240-BHnP2aHg.png",
+      "assets/ui-icons_555555_256x240-BY9OMAGw.png",
+      "assets/ui-icons_ffffff_256x240-Dw-ZeEXm.png",
+      "assets/ui-icons_777620_256x240-XyU4YhvJ.png",
+      "assets/ui-icons_cc0000_256x240-DFAnpvzo.png",
+      "assets/ui-icons_777777_256x240-D68C7QWK.png"
+    ]
+  },
+  "resources/js/frontend.js": {
+    "file": "assets/frontend-CYGDFSA5.js",
+    "name": "frontend",
+    "src": "resources/js/frontend.js",
+    "isEntry": true
+  }
+}

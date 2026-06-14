@@ -4,22 +4,14 @@
     <title>{{ $title ?? config('app.name') }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    @vite(['resources/css/frontend.css', 'resources/js/frontend.js'])
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
     <link rel="stylesheet" href="{{ asset('assets/fonts/icomoon/style.css') }}">
     <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
     <meta name="keywords" content="arrienda, venta, alquiler, administracion, bodegas, locales, oficinas, consultorios, medellin, antioquia, colombia, departamentos, apartamentos, casa, lotes, oferta, promocion, comodo, varato, accesible, alcance, real estate"/>
     <meta name="description" content="Somos una empresa Inmobiliaria dedicada a la comercialización de inmuebles del sector industrial y comercial.">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/jquery-ui.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/mediaelementplayer.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/flaticon/font/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fl-bigmug-line.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/libs/floating-wpp.css') }}">
     @stack('styles')
@@ -151,21 +143,9 @@
     </footer>
 
     <div class="wpp-plugin"></div>
-    <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery-migrate-3.0.1.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
-    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/js/mediaelement-and-player.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.stellar.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/sweetalert2.all.min.js') }}"></script>
-    <script src="{{ asset('assets/js/aos.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/libs/floating-wpp.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script defer src="{{ asset('assets/js/jquery.stellar.min.js') }}"></script>
+    <script defer src="{{ asset('assets/libs/floating-wpp.js') }}"></script>
+    <script defer src="{{ asset('assets/js/main.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

@@ -4,14 +4,9 @@
     <title>{{ $title ?? config('app.name') }} - Panel</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    @vite(['resources/css/admin.css'])
     <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
     <link rel="stylesheet" href="{{ asset('assets/panel/css/material-dashboard.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/panel/css/croppie.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/panel/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/panel/css/bootstrap-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/panel/css/jquery.steps.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/panel/css/materialize.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/panel/css/datepicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/panel/datatable/language/Spanish.json') }}">
     @stack('styles')
 </head>
