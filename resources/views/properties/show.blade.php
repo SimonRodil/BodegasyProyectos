@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 @section('content')
-<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({{ asset('assets/images/propiedades/' . $property->imagen_destacada) }});" data-aos="fade" data-stellar-background-ratio="0.5">
+<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({{ $property->imagen_destacada_url }});" data-aos="fade" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
@@ -17,14 +17,12 @@
             <div class="col-md-7">
                 <div id="property-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        @if($property->imagen_destacada)
                         <div class="carousel-item active">
-                            <img src="{{ asset('assets/images/propiedades/' . $property->imagen_destacada) }}" alt="Image" class="img-fluid">
+                            <img src="{{ $property->imagen_destacada_url }}" alt="Image" class="img-fluid">
                         </div>
-                        @endif
                         @foreach($property->images as $image)
                         <div class="carousel-item">
-                            <img src="{{ asset('assets/images/propiedades/fotos/' . $image->imagen) }}" alt="Image" class="img-fluid">
+                            <img src="{{ $image->url }}" alt="Image" class="img-fluid">
                         </div>
                         @endforeach
                     </div>
@@ -136,7 +134,7 @@
             <div class="col-md-6 col-lg-4 mb-5">
                 <a href="{{ route('properties.show', $prop->id) }}" class="prop-entry d-block">
                     <figure>
-                        <img src="{{ asset('assets/images/propiedades/' . $prop->imagen_destacada) }}" alt="Image" class="img-fluid">
+                        <img src="{{ $prop->imagen_destacada_url }}" alt="Image" class="img-fluid">
                     </figure>
                     <div class="prop-text">
                         <div class="inner">

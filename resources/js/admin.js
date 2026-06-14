@@ -4,8 +4,6 @@ import 'popper.js';
 import 'bootstrap';
 import moment from 'moment';
 import Swal from 'sweetalert2';
-import 'datatables.net';
-import 'datatables.net-bs4';
 import 'select2';
 import 'bootstrap-select';
 import 'bootstrap-datepicker';

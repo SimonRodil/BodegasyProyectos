@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
 {
+    const DEFAULT_IMAGE = 'default.png';
+
     protected $table = 'propiedades';
 
     protected $fillable = [
@@ -14,7 +16,7 @@ class Property extends Model
         'imagen_destacada', 'direccion', 'asesor', 'video', 'precio',
     ];
 
-    protected $appends = ['precio_format', 'tipo_oferta_nombre', 'ciudad_nombre'];
+    protected $appends = ['precio_format', 'tipo_oferta_nombre', 'ciudad_nombre', 'imagen_destacada_url'];
 
     protected $casts = [
         'tipo_oferta' => 'integer',
@@ -61,6 +63,12 @@ class Property extends Model
     public function getCiudadNombreAttribute()
     {
         return $this->city?->nombre;
+    }
+
+    public function getImagenDestacadaUrlAttribute(): string
+    {
+        $filename = $this->imagen_destacada ?: self::DEFAULT_IMAGE;
+        return asset('storage/assets/images/propiedades/' . $filename);
     }
 
     public function scopeForSale($query)

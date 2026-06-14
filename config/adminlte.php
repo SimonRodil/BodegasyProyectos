@@ -13,7 +13,7 @@ return [
         'allowed' => true,
     ],
 
-    'logo' => '<b>Bodegas</b> y Proyectos',
+    'logo' => '',
     'logo_img' => 'assets/images/logo.png',
     'logo_img_class' => 'brand-image',
     'logo_img_xl' => null,

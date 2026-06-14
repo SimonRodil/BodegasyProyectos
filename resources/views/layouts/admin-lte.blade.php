@@ -16,6 +16,7 @@
 @stop
 
 @section('adminlte_css')
+@livewireStyles
 @stack('styles')
 @yield('styles')
 <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
@@ -25,5 +26,6 @@
 <script>window.__adminReady=function(fn){if(window.jQuery)jQuery(fn);else{(window.__adminQueue=window.__adminQueue||[]).push(fn);}};</script>
 @stack('scripts')
 @yield('scripts')
+@livewireScripts
 <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}" defer></script>
 @stop

@@ -14,11 +14,6 @@ class ContactController extends Controller
         return view('admin.contact.index');
     }
 
-    public function data()
-    {
-        return response()->json(ContactMessage::with('replies')->get());
-    }
-
     public function reply(Request $request, $id)
     {
         $request->validate(['message' => 'required|string']);

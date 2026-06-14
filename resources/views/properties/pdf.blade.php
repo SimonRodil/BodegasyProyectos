@@ -30,7 +30,7 @@
     <div class="images">
         <h3>Galería</h3>
         @foreach($property->images as $img)
-        <img src="{{ public_path('assets/images/propiedades/fotos/' . $img->imagen) }}" alt="Gallery">
+        <img src="{{ public_path('storage/assets/images/propiedades/fotos/' . $img->imagen) }}" alt="Gallery">
         @endforeach
     </div>
     @endif

@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
+    public function index($id)
+    {
+        $property = \App\Models\Property::with('images', 'city', 'neighborhood')->findOrFail($id);
+        return view('admin.properties.galeria', compact('property'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -20,12 +26,12 @@ class GalleryController extends Controller
         $filename = $file->hashName();
         $file->storeAs('public/assets/images/propiedades/fotos', $filename);
 
-        $image = PropertyImage::create([
+        PropertyImage::create([
             'propiedad' => $request->propiedad,
             'imagen' => $filename,
         ]);
 
-        return response()->json(['base64' => $filename, 'id' => $image->id]);
+        return redirect()->route('admin.propiedades.galeria', $request->propiedad)->with('success', 'Foto agregada');
     }
 
     public function show($id)
@@ -41,6 +47,6 @@ class GalleryController extends Controller
         Storage::disk('public')->delete('assets/images/propiedades/fotos/' . $image->imagen);
         $image->delete();
 
-        return response('success');
+        return back()->with('success', 'Foto eliminada');
     }
 }

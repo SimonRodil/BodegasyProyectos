@@ -23,7 +23,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::get('/propiedades/data', [PropertyController::class, 'data'])->name('propiedades.data');
         Route::resource('propiedades', PropertyController::class)->parameters(['propiedades' => 'property']);
         Route::post('propiedades/{property}/foto-destacada', [PropertyController::class, 'uploadFeaturedImage'])->name('propiedades.foto-destacada');
         Route::post('propiedades/tmp-upload', [PropertyController::class, 'tmpUpload'])->name('propiedades.tmp-upload');
@@ -46,7 +45,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('mensajes', [InquiryController::class, 'index'])->name('mensajes.index');
         Route::delete('mensajes/{inquiry}', [InquiryController::class, 'destroy'])->name('mensajes.destroy');
 
-        Route::get('/contacto/data', [ContactController::class, 'data'])->name('contacto.data');
         Route::get('contacto', [ContactController::class, 'index'])->name('contacto.index');
         Route::post('contacto/{contactMessage}/reply', [ContactController::class, 'reply'])->name('contacto.reply');
         Route::delete('contacto/{contactMessage}', [ContactController::class, 'destroy'])->name('contacto.destroy');
@@ -55,6 +53,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('perfil', [ProfileController::class, 'update'])->name('perfil.update');
         Route::post('perfil/foto', [ProfileController::class, 'uploadPhoto'])->name('perfil.foto');
 
+        Route::get('propiedades/{property}/foto', [PropertyController::class, 'foto'])->name('propiedades.foto');
+        Route::get('propiedades/{property}/galeria', [GalleryController::class, 'index'])->name('propiedades.galeria');
         Route::post('galeria', [GalleryController::class, 'store'])->name('galeria.store');
         Route::get('galeria/{property}', [GalleryController::class, 'show'])->name('galeria.show');
         Route::delete('galeria/{image}', [GalleryController::class, 'destroy'])->name('galeria.destroy');

@@ -127,7 +127,7 @@
             <div class="slide-one-item">
                 <a href="{{ route('properties.show', $property->id) }}" class="prop-entry d-block">
                     <figure>
-                        <img src="{{ asset('assets/images/propiedades/' . $property->imagen_destacada) }}" alt="Image" class="img-fluid">
+                        <img src="{{ $property->imagen_destacada_url }}" alt="Image" class="img-fluid">
                     </figure>
                     <div class="prop-text">
                         <div class="inner">

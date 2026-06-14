@@ -12,14 +12,12 @@ class PropertyController extends Controller
 {
     public function index()
     {
-        $cities = City::all();
-        $properties = Property::with('city')->get();
-        return view('admin.properties.index', compact('cities', 'properties'));
+        return view('admin.properties.index');
     }
 
-    public function data()
+    public function create()
     {
-        return response()->json(Property::with('city')->get());
+        return view('admin.properties.create');
     }
 
     public function store(Request $request)
@@ -43,18 +41,21 @@ class PropertyController extends Controller
         ]);
 
         $data['asesor'] = $data['asesor'] ?? auth()->id();
-        $property = Property::create($data);
-
-        if ($request->ajax()) {
-            return response()->json(['message' => 'Consulta exitosa!', 'id' => $property->id]);
-        }
+        Property::create($data);
 
         return redirect()->route('admin.propiedades.index')->with('success', 'Propiedad creada');
     }
 
     public function show($id)
     {
-        return response()->json(Property::with(['city', 'neighborhood', 'advisor', 'images'])->findOrFail($id));
+        $property = Property::with(['city', 'neighborhood', 'advisor', 'images'])->findOrFail($id);
+        return view('admin.properties.show', compact('property'));
+    }
+
+    public function edit($id)
+    {
+        $property = Property::with(['city', 'neighborhood'])->findOrFail($id);
+        return view('admin.properties.edit', compact('property'));
     }
 
     public function update(Request $request, $id)
@@ -79,17 +80,19 @@ class PropertyController extends Controller
 
         $property->update($data);
 
-        if ($request->ajax()) {
-            return response()->json(['message' => 'Consulta exitosa!']);
-        }
-
         return redirect()->route('admin.propiedades.index')->with('success', 'Propiedad actualizada');
     }
 
     public function destroy($id)
     {
         Property::findOrFail($id)->delete();
-        return response('success');
+        return redirect()->route('admin.propiedades.index')->with('success', 'Propiedad eliminada');
+    }
+
+    public function foto($id)
+    {
+        $property = Property::with('city', 'neighborhood')->findOrFail($id);
+        return view('admin.properties.foto', compact('property'));
     }
 
     public function uploadFeaturedImage(Request $request, $id)
