@@ -38,5 +38,5 @@
 @endsection
 
 @push('scripts')
-<script src="{{ asset('assets/panel/js/blog/script.js') }}"></script>
+<script defer src="{{ asset('assets/panel/js/blog/script.js') }}"></script>
 @endpush

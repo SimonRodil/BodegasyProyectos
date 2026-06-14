@@ -4,9 +4,11 @@
     <title>Iniciar Sesión - Panel</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    @vite(['resources/js/login.js'])
     <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
     <link rel="stylesheet" href="{{ asset('assets/panel/login/libs/mdl/material.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/panel/login/css/style.css') }}">
+    <script>window.__adminReady=function(fn){if(window.jQuery)jQuery(fn);else{(window.__adminQueue=window.__adminQueue||[]).push(fn);}};</script>
 </head>
 <body>
     <div class="mdl-grid">
@@ -43,26 +45,26 @@
         </div>
     </div>
 
-    <script src="{{ asset('assets/panel/login/libs/mdl/material.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/sweetalert2.all.min.js') }}"></script>
+    <script defer src="{{ asset('assets/panel/login/libs/mdl/material.min.js') }}"></script>
     <script>
-        $('#form-login').on('submit', function(e) {
-            e.preventDefault();
-            $.ajax({
-                url: '{{ route("admin.login.post") }}',
-                method: 'POST',
-                data: $(this).serialize(),
-                dataType: 'json',
-                success: function(r) {
-                    if (r.message === 'success') {
-                        Swal.fire({ icon: 'success', title: 'Bienvenido!', showConfirmButton: false, timer: 1500 });
-                        setTimeout(function() { window.location.href = '{{ route("admin.dashboard") }}'; }, 1500);
+        __adminReady(function() {
+            $('#form-login').on('submit', function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '{{ route("admin.login.post") }}',
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    dataType: 'json',
+                    success: function(r) {
+                        if (r.message === 'success') {
+                            Swal.fire({ icon: 'success', title: 'Bienvenido!', showConfirmButton: false, timer: 1500 });
+                            setTimeout(function() { window.location.href = '{{ route("admin.dashboard") }}'; }, 1500);
+                        }
+                    },
+                    error: function() {
+                        Swal.fire({ icon: 'error', title: 'Error', text: 'Usuario o contraseña incorrectos' });
                     }
-                },
-                error: function() {
-                    Swal.fire({ icon: 'error', title: 'Error', text: 'Usuario o contraseña incorrectos' });
-                }
+                });
             });
         });
     </script>

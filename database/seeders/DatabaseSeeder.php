@@ -10,6 +10,12 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        $this->call([
+            CitySeeder::class,
+            NeighborhoodSeeder::class,
+            PropertySeeder::class,
+        ]);
+
         User::create([
             'username' => 'admin',
             'name'     => 'Administrador',

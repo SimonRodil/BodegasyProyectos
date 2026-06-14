@@ -14,6 +14,8 @@ class Property extends Model
         'imagen_destacada', 'direccion', 'asesor', 'video', 'precio',
     ];
 
+    protected $appends = ['precio_format', 'tipo_oferta_nombre', 'ciudad_nombre'];
+
     protected $casts = [
         'tipo_oferta' => 'integer',
         'area' => 'decimal:2',
@@ -54,6 +56,11 @@ class Property extends Model
     public function getTipoOfertaNombreAttribute()
     {
         return $this->tipo_oferta == 2 ? 'Arriendo' : 'Venta';
+    }
+
+    public function getCiudadNombreAttribute()
+    {
+        return $this->city?->nombre;
     }
 
     public function scopeForSale($query)

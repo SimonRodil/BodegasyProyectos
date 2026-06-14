@@ -71,5 +71,5 @@
 @endsection
 
 @push('scripts')
-<script src="{{ asset('assets/panel/js/ciudades-barrios/ciudades.js') }}"></script>
+<script defer src="{{ asset('assets/panel/js/ciudades-barrios/ciudades.js') }}"></script>
 @endpush

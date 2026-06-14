@@ -5,9 +5,8 @@ $(document).ready(function(){
   if($ciudad != null && $ciudad != '-' && $ciudad != '') {
     $.ajax({
       beforeSend: function() { $selBarrio.empty(); },
-      url: 'dri/barrios/sel.php',
+      url: '/api/barrios/' + $ciudad,
       method: 'GET',
-      data: { ciudad: $ciudad },
       success: function(data) {
         $selBarrio.append("<option value='-'>Barrio</option>");
         $.each(data, function(index, value){
@@ -40,9 +39,8 @@ $(document).ready(function(){
     var $data = $('#main-filter').serialize();
     $.ajax({
       beforeSend: function() { $sectionRow.css('opacity', '0.5'); $('[data-action="pagination"]').removeClass('active'); },
-      url: 'dri/propiedades/filtro-json.php?pagina=' + $pagina,
+      url: '/api/filtrar-propiedades?pagina=' + $pagina,
       method: 'POST',
-      type: 'json',
       data: $data,
       success: function(resp) {
         $sectionRow.empty();

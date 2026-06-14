@@ -203,5 +203,5 @@
 @endsection
 
 @push('scripts')
-<script src="{{ asset('assets/js/filtrar-propiedades.js') }}"></script>
+<script defer src="{{ asset('assets/js/filtrar-propiedades.js') }}"></script>
 @endpush

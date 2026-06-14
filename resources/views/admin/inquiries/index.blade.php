@@ -19,5 +19,5 @@
 @endsection
 
 @push('scripts')
-<script src="{{ asset('assets/panel/js/mensajeria/script.js') }}"></script>
+<script defer src="{{ asset('assets/panel/js/mensajeria/script.js') }}"></script>
 @endpush
