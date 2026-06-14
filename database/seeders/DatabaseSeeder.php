@@ -17,5 +17,15 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('admin123'),
             'rank'     => 1,
         ]);
+
+        if (env('ADMIN_EMAIL') && env('ADMIN_PASSWORD')) {
+            User::create([
+                'username' => env('ADMIN_USERNAME', 'admin2'),
+                'name'     => env('ADMIN_NAME', 'Admin Personal'),
+                'email'    => env('ADMIN_EMAIL'),
+                'password' => Hash::make(env('ADMIN_PASSWORD')),
+                'rank'     => env('ADMIN_RANK', 1),
+            ]);
+        }
     }
 }
